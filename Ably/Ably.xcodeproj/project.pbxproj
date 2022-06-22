@@ -25,6 +25,7 @@
 		47AFB9B92862FE53005501FA /* URLRequest+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AFB9B82862FE53005501FA /* URLRequest+extension.swift */; };
 		47AFB9BB2862FF56005501FA /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AFB9BA2862FF56005501FA /* EndPoint.swift */; };
 		47AFB9BD28634784005501FA /* HttpNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AFB9BC28634784005501FA /* HttpNetwork.swift */; };
+		47AFB9BF28634BBE005501FA /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AFB9BE28634BBE005501FA /* JSONParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		47AFB9B82862FE53005501FA /* URLRequest+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+extension.swift"; sourceTree = "<group>"; };
 		47AFB9BA2862FF56005501FA /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		47AFB9BC28634784005501FA /* HttpNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpNetwork.swift; sourceTree = "<group>"; };
+		47AFB9BE28634BBE005501FA /* JSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 				47AFB9B82862FE53005501FA /* URLRequest+extension.swift */,
 				47AFB9BA2862FF56005501FA /* EndPoint.swift */,
 				47AFB9BC28634784005501FA /* HttpNetwork.swift */,
+				47AFB9BE28634BBE005501FA /* JSONParser.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 				47AFB9BB2862FF56005501FA /* EndPoint.swift in Sources */,
 				47A3EF752862D7B70026C400 /* ViewController.swift in Sources */,
 				47AFB9B62862FDC0005501FA /* AblyGoodsDTO.swift in Sources */,
+				47AFB9BF28634BBE005501FA /* JSONParser.swift in Sources */,
 				47A3EF712862D7B70026C400 /* AppDelegate.swift in Sources */,
 				47A3EF732862D7B70026C400 /* SceneDelegate.swift in Sources */,
 				47AFB9B42862FD9A005501FA /* AblyBannerDTO.swift in Sources */,
