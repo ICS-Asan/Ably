@@ -22,6 +22,7 @@
 		47AFB9B02862FC4E005501FA /* AblyHomeDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AFB9AF2862FC4E005501FA /* AblyHomeDTO.swift */; };
 		47AFB9B42862FD9A005501FA /* AblyBannerDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AFB9B32862FD9A005501FA /* AblyBannerDTO.swift */; };
 		47AFB9B62862FDC0005501FA /* AblyGoodsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AFB9B52862FDC0005501FA /* AblyGoodsDTO.swift */; };
+		47AFB9B92862FE53005501FA /* URLRequest+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AFB9B82862FE53005501FA /* URLRequest+extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		47AFB9AF2862FC4E005501FA /* AblyHomeDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AblyHomeDTO.swift; sourceTree = "<group>"; };
 		47AFB9B32862FD9A005501FA /* AblyBannerDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AblyBannerDTO.swift; sourceTree = "<group>"; };
 		47AFB9B52862FDC0005501FA /* AblyGoodsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AblyGoodsDTO.swift; sourceTree = "<group>"; };
+		47AFB9B82862FE53005501FA /* URLRequest+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 		47AFB9B12862FD7B005501FA /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				47AFB9B72862FE28005501FA /* Network */,
 				47AFB9B22862FD84005501FA /* NetworkDTO */,
 			);
 			path = Data;
@@ -118,6 +121,14 @@
 				47AFB9B52862FDC0005501FA /* AblyGoodsDTO.swift */,
 			);
 			path = NetworkDTO;
+			sourceTree = "<group>";
+		};
+		47AFB9B72862FE28005501FA /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				47AFB9B82862FE53005501FA /* URLRequest+extension.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,6 +215,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				47AFB9B02862FC4E005501FA /* AblyHomeDTO.swift in Sources */,
+				47AFB9B92862FE53005501FA /* URLRequest+extension.swift in Sources */,
 				47A3EF752862D7B70026C400 /* ViewController.swift in Sources */,
 				47AFB9B62862FDC0005501FA /* AblyGoodsDTO.swift in Sources */,
 				47A3EF712862D7B70026C400 /* AppDelegate.swift in Sources */,
