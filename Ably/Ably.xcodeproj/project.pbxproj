@@ -68,15 +68,31 @@
 		47A3EF6F2862D7B70026C400 /* Ably */ = {
 			isa = PBXGroup;
 			children = (
-				47A3EF702862D7B70026C400 /* AppDelegate.swift */,
-				47A3EF722862D7B70026C400 /* SceneDelegate.swift */,
+				47A3EF932862DFB90026C400 /* Application */,
 				47A3EF742862D7B70026C400 /* ViewController.swift */,
 				47A3EF762862D7B70026C400 /* Main.storyboard */,
-				47A3EF792862D7BA0026C400 /* Assets.xcassets */,
 				47A3EF7B2862D7BA0026C400 /* LaunchScreen.storyboard */,
-				47A3EF7E2862D7BA0026C400 /* Info.plist */,
+				47A3EF942862DFF10026C400 /* Resources */,
 			);
 			path = Ably;
+			sourceTree = "<group>";
+		};
+		47A3EF932862DFB90026C400 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				47A3EF702862D7B70026C400 /* AppDelegate.swift */,
+				47A3EF722862D7B70026C400 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		47A3EF942862DFF10026C400 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				47A3EF792862D7BA0026C400 /* Assets.xcassets */,
+				47A3EF7E2862D7BA0026C400 /* Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
