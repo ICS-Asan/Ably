@@ -23,6 +23,7 @@
 		47AFB9B42862FD9A005501FA /* AblyBannerDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AFB9B32862FD9A005501FA /* AblyBannerDTO.swift */; };
 		47AFB9B62862FDC0005501FA /* AblyGoodsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AFB9B52862FDC0005501FA /* AblyGoodsDTO.swift */; };
 		47AFB9B92862FE53005501FA /* URLRequest+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AFB9B82862FE53005501FA /* URLRequest+extension.swift */; };
+		47AFB9BB2862FF56005501FA /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AFB9BA2862FF56005501FA /* EndPoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		47AFB9B32862FD9A005501FA /* AblyBannerDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AblyBannerDTO.swift; sourceTree = "<group>"; };
 		47AFB9B52862FDC0005501FA /* AblyGoodsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AblyGoodsDTO.swift; sourceTree = "<group>"; };
 		47AFB9B82862FE53005501FA /* URLRequest+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+extension.swift"; sourceTree = "<group>"; };
+		47AFB9BA2862FF56005501FA /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				47AFB9B82862FE53005501FA /* URLRequest+extension.swift */,
+				47AFB9BA2862FF56005501FA /* EndPoint.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 			files = (
 				47AFB9B02862FC4E005501FA /* AblyHomeDTO.swift in Sources */,
 				47AFB9B92862FE53005501FA /* URLRequest+extension.swift in Sources */,
+				47AFB9BB2862FF56005501FA /* EndPoint.swift in Sources */,
 				47A3EF752862D7B70026C400 /* ViewController.swift in Sources */,
 				47AFB9B62862FDC0005501FA /* AblyGoodsDTO.swift in Sources */,
 				47A3EF712862D7B70026C400 /* AppDelegate.swift in Sources */,
