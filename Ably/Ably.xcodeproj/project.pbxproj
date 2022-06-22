@@ -19,6 +19,9 @@
 		47A3EF8D2862D86C0026C400 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 47A3EF8C2862D86C0026C400 /* RxRelay */; };
 		47A3EF8F2862D86C0026C400 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 47A3EF8E2862D86C0026C400 /* RxSwift */; };
 		47A3EF912862D86C0026C400 /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = 47A3EF902862D86C0026C400 /* RxTest */; };
+		47AFB9B02862FC4E005501FA /* AblyHomeDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AFB9AF2862FC4E005501FA /* AblyHomeDTO.swift */; };
+		47AFB9B42862FD9A005501FA /* AblyBannerDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AFB9B32862FD9A005501FA /* AblyBannerDTO.swift */; };
+		47AFB9B62862FDC0005501FA /* AblyGoodsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AFB9B52862FDC0005501FA /* AblyGoodsDTO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		47A3EF792862D7BA0026C400 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		47A3EF7C2862D7BA0026C400 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		47A3EF7E2862D7BA0026C400 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		47AFB9AF2862FC4E005501FA /* AblyHomeDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AblyHomeDTO.swift; sourceTree = "<group>"; };
+		47AFB9B32862FD9A005501FA /* AblyBannerDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AblyBannerDTO.swift; sourceTree = "<group>"; };
+		47AFB9B52862FDC0005501FA /* AblyGoodsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AblyGoodsDTO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +74,7 @@
 		47A3EF6F2862D7B70026C400 /* Ably */ = {
 			isa = PBXGroup;
 			children = (
+				47AFB9B12862FD7B005501FA /* Data */,
 				47A3EF932862DFB90026C400 /* Application */,
 				47A3EF742862D7B70026C400 /* ViewController.swift */,
 				47A3EF762862D7B70026C400 /* Main.storyboard */,
@@ -93,6 +100,24 @@
 				47A3EF7E2862D7BA0026C400 /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		47AFB9B12862FD7B005501FA /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				47AFB9B22862FD84005501FA /* NetworkDTO */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		47AFB9B22862FD84005501FA /* NetworkDTO */ = {
+			isa = PBXGroup;
+			children = (
+				47AFB9AF2862FC4E005501FA /* AblyHomeDTO.swift */,
+				47AFB9B32862FD9A005501FA /* AblyBannerDTO.swift */,
+				47AFB9B52862FDC0005501FA /* AblyGoodsDTO.swift */,
+			);
+			path = NetworkDTO;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,9 +203,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47AFB9B02862FC4E005501FA /* AblyHomeDTO.swift in Sources */,
 				47A3EF752862D7B70026C400 /* ViewController.swift in Sources */,
+				47AFB9B62862FDC0005501FA /* AblyGoodsDTO.swift in Sources */,
 				47A3EF712862D7B70026C400 /* AppDelegate.swift in Sources */,
 				47A3EF732862D7B70026C400 /* SceneDelegate.swift in Sources */,
+				47AFB9B42862FD9A005501FA /* AblyBannerDTO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
