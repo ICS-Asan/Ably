@@ -31,6 +31,7 @@
 		47AFB9CB286480A2005501FA /* AblyHomeDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AFB9CA286480A2005501FA /* AblyHomeDataRepository.swift */; };
 		47AFB9D128648FDF005501FA /* AblyAPIRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AFB9D028648FDF005501FA /* AblyAPIRepository.swift */; };
 		47AFB9D3286495FA005501FA /* AblyHomeDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AFB9D2286495FA005501FA /* AblyHomeDataUseCase.swift */; };
+		47AFB9D62864AE54005501FA /* AblyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AFB9D52864AE54005501FA /* AblyTabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		47AFB9CA286480A2005501FA /* AblyHomeDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AblyHomeDataRepository.swift; sourceTree = "<group>"; };
 		47AFB9D028648FDF005501FA /* AblyAPIRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AblyAPIRepository.swift; sourceTree = "<group>"; };
 		47AFB9D2286495FA005501FA /* AblyHomeDataUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AblyHomeDataUseCase.swift; sourceTree = "<group>"; };
+		47AFB9D52864AE54005501FA /* AblyTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AblyTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 		47A3EF6F2862D7B70026C400 /* Ably */ = {
 			isa = PBXGroup;
 			children = (
+				47AFB9D42864AE2B005501FA /* View */,
 				47AFB9C028645102005501FA /* Domain */,
 				47AFB9B12862FD7B005501FA /* Data */,
 				47A3EF932862DFB90026C400 /* Application */,
@@ -179,6 +182,14 @@
 				47AFB9D028648FDF005501FA /* AblyAPIRepository.swift */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		47AFB9D42864AE2B005501FA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				47AFB9D52864AE54005501FA /* AblyTabBarController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,6 +290,7 @@
 				47A3EF732862D7B70026C400 /* SceneDelegate.swift in Sources */,
 				47AFB9C7286451A9005501FA /* AblyGoods.swift in Sources */,
 				47AFB9B42862FD9A005501FA /* AblyBannerDTO.swift in Sources */,
+				47AFB9D62864AE54005501FA /* AblyTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
