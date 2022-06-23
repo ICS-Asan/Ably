@@ -24,13 +24,13 @@ final class AblyTabBarController: UITabBarController {
     }
     
     private func setupTabBarItem() {
-        homeNavigationController.tabBarItem = UITabBarItem(title: "홈",
-                                                           image: UIImage(systemName: "house"),
-                                                           selectedImage: UIImage(systemName: "house.fill"))
-        favoritNavigationController.tabBarItem = UITabBarItem(title: "좋아요",
-                                                           image: UIImage(systemName: "heart"),
-                                                           selectedImage: UIImage(systemName: "heart.fill"))
-        tabBar.tintColor = UIColor(red: 236/255, green: 94/255, blue: 101/255, alpha: 1)
+        homeNavigationController.tabBarItem = UITabBarItem(title: Design.Text.homeViewTitle,
+                                                           image: Design.Image.normalHomeTabBar,
+                                                           selectedImage: Design.Image.selectedHomeTabBar)
+        favoritNavigationController.tabBarItem = UITabBarItem(title: Design.Text.favoritViewTitle,
+                                                              image: Design.Image.normalFavoritTabBar,
+                                                              selectedImage: Design.Image.selectedFavoritTabBar)
+        tabBar.tintColor = Design.Color.main
         tabBar.unselectedItemTintColor = .systemGray
     }
     
