@@ -14,11 +14,9 @@
 		47A3EF7A2862D7BA0026C400 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47A3EF792862D7BA0026C400 /* Assets.xcassets */; };
 		47A3EF7D2862D7BA0026C400 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47A3EF7B2862D7BA0026C400 /* LaunchScreen.storyboard */; };
 		47A3EF862862D8480026C400 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 47A3EF852862D8480026C400 /* SnapKit */; };
-		47A3EF892862D86C0026C400 /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = 47A3EF882862D86C0026C400 /* RxBlocking */; };
 		47A3EF8B2862D86C0026C400 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 47A3EF8A2862D86C0026C400 /* RxCocoa */; };
 		47A3EF8D2862D86C0026C400 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 47A3EF8C2862D86C0026C400 /* RxRelay */; };
 		47A3EF8F2862D86C0026C400 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 47A3EF8E2862D86C0026C400 /* RxSwift */; };
-		47A3EF912862D86C0026C400 /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = 47A3EF902862D86C0026C400 /* RxTest */; };
 		47AFB9B02862FC4E005501FA /* AblyHomeDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AFB9AF2862FC4E005501FA /* AblyHomeDTO.swift */; };
 		47AFB9B42862FD9A005501FA /* AblyBannerDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AFB9B32862FD9A005501FA /* AblyBannerDTO.swift */; };
 		47AFB9B62862FDC0005501FA /* AblyGoodsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AFB9B52862FDC0005501FA /* AblyGoodsDTO.swift */; };
@@ -55,8 +53,6 @@
 				47A3EF862862D8480026C400 /* SnapKit in Frameworks */,
 				47A3EF8F2862D86C0026C400 /* RxSwift in Frameworks */,
 				47A3EF8D2862D86C0026C400 /* RxRelay in Frameworks */,
-				47A3EF912862D86C0026C400 /* RxTest in Frameworks */,
-				47A3EF892862D86C0026C400 /* RxBlocking in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,11 +154,9 @@
 			name = Ably;
 			packageProductDependencies = (
 				47A3EF852862D8480026C400 /* SnapKit */,
-				47A3EF882862D86C0026C400 /* RxBlocking */,
 				47A3EF8A2862D86C0026C400 /* RxCocoa */,
 				47A3EF8C2862D86C0026C400 /* RxRelay */,
 				47A3EF8E2862D86C0026C400 /* RxSwift */,
-				47A3EF902862D86C0026C400 /* RxTest */,
 			);
 			productName = Ably;
 			productReference = 47A3EF6D2862D7B70026C400 /* Ably.app */;
@@ -478,11 +472,6 @@
 			package = 47A3EF842862D8480026C400 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
-		47A3EF882862D86C0026C400 /* RxBlocking */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 47A3EF872862D86C0026C400 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxBlocking;
-		};
 		47A3EF8A2862D86C0026C400 /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 47A3EF872862D86C0026C400 /* XCRemoteSwiftPackageReference "RxSwift" */;
@@ -497,11 +486,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 47A3EF872862D86C0026C400 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
-		};
-		47A3EF902862D86C0026C400 /* RxTest */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 47A3EF872862D86C0026C400 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxTest;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

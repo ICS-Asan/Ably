@@ -9,9 +9,15 @@ class HttpNetwork {
         self.urlSession = urlSession
     }
     
-    private func fetch(with endPoint: URL) -> Observable<Data> {
-        return Observable.create() { emitter in
-            let task = URLSession.shared.dataTask(with: endPoint) { (data, _ , error) in
+    private func fetch(with endPoint: URL?) -> Observable<Data> {
+        guard let endPoint = endPoint else {
+            // 유효하지 않은 URL Error 추가
+            return .error(fatalError())
+        }
+
+        return Observable.create() { [weak self] emitter in
+            let urlRequest = URLRequest(url: endPoint, method: .get)
+            let task = self?.urlSession.dataTask(with: urlRequest) { (data, _ , error) in
                 guard error == nil else {
                     emitter.onError(error!)
                     return
@@ -22,10 +28,10 @@ class HttpNetwork {
                 }
                 emitter.onCompleted()
             }
-            task.resume()
+            task?.resume()
 
             return Disposables.create() {
-                task.cancel()
+                task?.cancel()
             }
         }
     }
