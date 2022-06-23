@@ -30,6 +30,7 @@
 		47AFB9C928645874005501FA /* HTTPNetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AFB9C828645874005501FA /* HTTPNetworkError.swift */; };
 		47AFB9CB286480A2005501FA /* AblyHomeDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AFB9CA286480A2005501FA /* AblyHomeDataRepository.swift */; };
 		47AFB9D128648FDF005501FA /* AblyAPIRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AFB9D028648FDF005501FA /* AblyAPIRepository.swift */; };
+		47AFB9D3286495FA005501FA /* AblyHomeDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AFB9D2286495FA005501FA /* AblyHomeDataUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		47AFB9C828645874005501FA /* HTTPNetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPNetworkError.swift; sourceTree = "<group>"; };
 		47AFB9CA286480A2005501FA /* AblyHomeDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AblyHomeDataRepository.swift; sourceTree = "<group>"; };
 		47AFB9D028648FDF005501FA /* AblyAPIRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AblyAPIRepository.swift; sourceTree = "<group>"; };
+		47AFB9D2286495FA005501FA /* AblyHomeDataUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AblyHomeDataUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				47AFB9C12864510F005501FA /* Entity */,
+				47AFB9D2286495FA005501FA /* AblyHomeDataUseCase.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				47AFB9B02862FC4E005501FA /* AblyHomeDTO.swift in Sources */,
 				47AFB9C328645123005501FA /* AblyHomeData.swift in Sources */,
 				47AFB9D128648FDF005501FA /* AblyAPIRepository.swift in Sources */,
+				47AFB9D3286495FA005501FA /* AblyHomeDataUseCase.swift in Sources */,
 				47AFB9B92862FE53005501FA /* URLRequest+extension.swift in Sources */,
 				47AFB9CB286480A2005501FA /* AblyHomeDataRepository.swift in Sources */,
 				47AFB9BB2862FF56005501FA /* EndPoint.swift in Sources */,
