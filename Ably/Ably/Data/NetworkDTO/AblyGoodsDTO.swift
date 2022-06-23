@@ -14,4 +14,14 @@ struct AblyGoodsDTO: Codable {
         case actualPrice = "actual_price"
         case price
     }
+    
+    func toDomain() -> AblyGoods {
+        return AblyGoods(id: id,
+                         name: name,
+                         image: image,
+                         isNew: isNew,
+                         sellCount: sellCount,
+                         actualPrice: actualPrice,
+                         price: price)
+    }
 }

@@ -24,7 +24,7 @@
 		47AFB9BB2862FF56005501FA /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AFB9BA2862FF56005501FA /* EndPoint.swift */; };
 		47AFB9BD28634784005501FA /* HTTPNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AFB9BC28634784005501FA /* HTTPNetwork.swift */; };
 		47AFB9BF28634BBE005501FA /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AFB9BE28634BBE005501FA /* JSONParser.swift */; };
-		47AFB9C328645123005501FA /* AblyHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AFB9C228645123005501FA /* AblyHome.swift */; };
+		47AFB9C328645123005501FA /* AblyHomeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AFB9C228645123005501FA /* AblyHomeData.swift */; };
 		47AFB9C52864519B005501FA /* AblyBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AFB9C42864519B005501FA /* AblyBanner.swift */; };
 		47AFB9C7286451A9005501FA /* AblyGoods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AFB9C6286451A9005501FA /* AblyGoods.swift */; };
 		47AFB9C928645874005501FA /* HTTPNetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AFB9C828645874005501FA /* HTTPNetworkError.swift */; };
@@ -46,7 +46,7 @@
 		47AFB9BA2862FF56005501FA /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		47AFB9BC28634784005501FA /* HTTPNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPNetwork.swift; sourceTree = "<group>"; };
 		47AFB9BE28634BBE005501FA /* JSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
-		47AFB9C228645123005501FA /* AblyHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AblyHome.swift; sourceTree = "<group>"; };
+		47AFB9C228645123005501FA /* AblyHomeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AblyHomeData.swift; sourceTree = "<group>"; };
 		47AFB9C42864519B005501FA /* AblyBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AblyBanner.swift; sourceTree = "<group>"; };
 		47AFB9C6286451A9005501FA /* AblyGoods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AblyGoods.swift; sourceTree = "<group>"; };
 		47AFB9C828645874005501FA /* HTTPNetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPNetworkError.swift; sourceTree = "<group>"; };
@@ -157,7 +157,7 @@
 		47AFB9C12864510F005501FA /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				47AFB9C228645123005501FA /* AblyHome.swift */,
+				47AFB9C228645123005501FA /* AblyHomeData.swift */,
 				47AFB9C42864519B005501FA /* AblyBanner.swift */,
 				47AFB9C6286451A9005501FA /* AblyGoods.swift */,
 			);
@@ -248,7 +248,7 @@
 				47AFB9BD28634784005501FA /* HTTPNetwork.swift in Sources */,
 				47AFB9C928645874005501FA /* HTTPNetworkError.swift in Sources */,
 				47AFB9B02862FC4E005501FA /* AblyHomeDTO.swift in Sources */,
-				47AFB9C328645123005501FA /* AblyHome.swift in Sources */,
+				47AFB9C328645123005501FA /* AblyHomeData.swift in Sources */,
 				47AFB9B92862FE53005501FA /* URLRequest+extension.swift in Sources */,
 				47AFB9BB2862FF56005501FA /* EndPoint.swift in Sources */,
 				47A3EF752862D7B70026C400 /* ViewController.swift in Sources */,
