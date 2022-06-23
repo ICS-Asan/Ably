@@ -28,6 +28,7 @@
 		47AFB9C52864519B005501FA /* AblyBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AFB9C42864519B005501FA /* AblyBanner.swift */; };
 		47AFB9C7286451A9005501FA /* AblyGoods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AFB9C6286451A9005501FA /* AblyGoods.swift */; };
 		47AFB9C928645874005501FA /* HTTPNetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AFB9C828645874005501FA /* HTTPNetworkError.swift */; };
+		47AFB9CB286480A2005501FA /* AblyHomeDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AFB9CA286480A2005501FA /* AblyHomeDataRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		47AFB9C42864519B005501FA /* AblyBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AblyBanner.swift; sourceTree = "<group>"; };
 		47AFB9C6286451A9005501FA /* AblyGoods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AblyGoods.swift; sourceTree = "<group>"; };
 		47AFB9C828645874005501FA /* HTTPNetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPNetworkError.swift; sourceTree = "<group>"; };
+		47AFB9CA286480A2005501FA /* AblyHomeDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AblyHomeDataRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 			children = (
 				47AFB9B72862FE28005501FA /* Network */,
 				47AFB9B22862FD84005501FA /* NetworkDTO */,
+				47AFB9CA286480A2005501FA /* AblyHomeDataRepository.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 				47AFB9B02862FC4E005501FA /* AblyHomeDTO.swift in Sources */,
 				47AFB9C328645123005501FA /* AblyHomeData.swift in Sources */,
 				47AFB9B92862FE53005501FA /* URLRequest+extension.swift in Sources */,
+				47AFB9CB286480A2005501FA /* AblyHomeDataRepository.swift in Sources */,
 				47AFB9BB2862FF56005501FA /* EndPoint.swift in Sources */,
 				47A3EF752862D7B70026C400 /* ViewController.swift in Sources */,
 				47AFB9B62862FDC0005501FA /* AblyGoodsDTO.swift in Sources */,
