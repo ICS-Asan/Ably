@@ -10,6 +10,7 @@
 		479911512864BB3200F7C5F2 /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479911502864BB3200F7C5F2 /* Design.swift */; };
 		47991153286586C300F7C5F2 /* BannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47991152286586C300F7C5F2 /* BannerCell.swift */; };
 		4799115528658A6D00F7C5F2 /* GoodsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4799115428658A6D00F7C5F2 /* GoodsCell.swift */; };
+		479911582865B69200F7C5F2 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 479911572865B69200F7C5F2 /* SDWebImage */; };
 		47A3EF712862D7B70026C400 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A3EF702862D7B70026C400 /* AppDelegate.swift */; };
 		47A3EF732862D7B70026C400 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A3EF722862D7B70026C400 /* SceneDelegate.swift */; };
 		47A3EF752862D7B70026C400 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A3EF742862D7B70026C400 /* HomeViewController.swift */; };
@@ -75,6 +76,7 @@
 				47A3EF862862D8480026C400 /* SnapKit in Frameworks */,
 				47A3EF8F2862D86C0026C400 /* RxSwift in Frameworks */,
 				47A3EF8D2862D86C0026C400 /* RxRelay in Frameworks */,
+				479911582865B69200F7C5F2 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,6 +232,7 @@
 				47A3EF8A2862D86C0026C400 /* RxCocoa */,
 				47A3EF8C2862D86C0026C400 /* RxRelay */,
 				47A3EF8E2862D86C0026C400 /* RxSwift */,
+				479911572865B69200F7C5F2 /* SDWebImage */,
 			);
 			productName = Ably;
 			productReference = 47A3EF6D2862D7B70026C400 /* Ably.app */;
@@ -262,6 +265,7 @@
 			packageReferences = (
 				47A3EF842862D8480026C400 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				47A3EF872862D86C0026C400 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				479911562865B69200F7C5F2 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = 47A3EF6E2862D7B70026C400 /* Products */;
 			projectDirPath = "";
@@ -532,6 +536,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		479911562865B69200F7C5F2 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 5.9.0;
+			};
+		};
 		47A3EF842862D8480026C400 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -551,6 +563,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		479911572865B69200F7C5F2 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 479911562865B69200F7C5F2 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
 		47A3EF852862D8480026C400 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 47A3EF842862D8480026C400 /* XCRemoteSwiftPackageReference "SnapKit" */;

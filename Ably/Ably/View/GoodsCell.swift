@@ -1,4 +1,5 @@
 import UIKit
+import SDWebImage
 
 class GoodsCell: UICollectionViewCell {
     private let containerView: UIView = {
@@ -113,7 +114,7 @@ class GoodsCell: UICollectionViewCell {
     }
     
     func configureGoodsImageView(with url: String) {
-        
+        goodsImageView.sd_setImage(with: URL(string: url))
     }
     
     func configureDiscountPriceRateLable(with discountRate: Int) {
