@@ -18,6 +18,16 @@ class GoodsCell: UICollectionViewCell {
         return imageView
     }()
     
+    private let favoriteButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(systemName: "heart"), for: .normal)
+        button.tintColor = .white
+        button.layer.shadowColor = UIColor.systemGray.cgColor
+        button.layer.shadowOpacity = 0.8
+        
+        return button
+    }()
+    
     private let discountPriceRateLabel: UILabel = {
         let label = UILabel()
         label.font = .preferredFont(forTextStyle: .body).bold
@@ -156,9 +166,13 @@ class GoodsCell: UICollectionViewCell {
     
     private func setupGoodsImageViewLayout() {
         containerView.addSubview(goodsImageView)
+        containerView.addSubview(favoriteButton)
         goodsImageView.snp.makeConstraints { make in
             make.top.leading.equalToSuperview().inset(20)
             make.width.height.equalTo(100)
+        }
+        favoriteButton.snp.makeConstraints { make in
+            make.top.trailing.equalTo(goodsImageView).inset(5)
         }
     }
     
