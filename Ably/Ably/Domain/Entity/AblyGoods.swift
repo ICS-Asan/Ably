@@ -1,6 +1,6 @@
 import Foundation
 
-struct AblyGoods {
+struct AblyGoods: Hashable {
     let id: Int
     let name: String
     let image: String

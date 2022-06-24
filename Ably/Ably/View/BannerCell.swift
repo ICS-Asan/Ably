@@ -5,6 +5,7 @@ class BannerCell: UICollectionViewCell {
     
     private let bannerImage: UIImageView = {
         let imageView = UIImageView(frame: .zero)
+        imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         
         return imageView
@@ -32,8 +33,8 @@ class BannerCell: UICollectionViewCell {
         }
     }
     
-    func setupCell(with image: UIImage) {
-        bannerImage.image = image
+    func setupCell(with url: String?) {
+        guard let url = url else { return }
+        bannerImage.sd_setImage(with: URL(string: url))
     }
-
 }

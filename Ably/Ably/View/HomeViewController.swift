@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class HomeViewController: UIViewController {
     
@@ -23,11 +24,31 @@ class HomeViewController: UIViewController {
         }
     }
     
+    private enum AblyHomeItem: Hashable {
+        case banner(AblyBanner)
+        case goods(AblyGoods)
+    }
+    
     private var collectionView: UICollectionView!
+    private var dataSource: UICollectionViewDiffableDataSource<Section, AblyHomeItem>?
+    let useCase = AblyHomeDataUseCase()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = Design.Text.homeViewTitle
+        collectionView = UICollectionView(frame: .zero, collectionViewLayout: createCollectionViewLayout())
+        registerCollectionViewCell()
+        setupCollectionViewDataSource()
+        view.addSubview(collectionView)
+        collectionView.snp.makeConstraints { make in
+            make.edges.equalTo(view.safeAreaLayoutGuide)
+        }
+        collectionView.dataSource = dataSource
+        useCase.fetchAblyHomeData()
+            .subscribe(on: MainScheduler.asyncInstance)
+            .subscribe(onNext: { data in
+                self.populate(banners: data.banners ?? [], goods: data.goods)
+            })
     }
     
 }
@@ -38,7 +59,7 @@ extension HomeViewController {
                                                             layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
             switch sectionIndex {
             case Section.banners.index:
-                return self.creatGoodsSectionLayout()
+                return self.creatBannerSectionLayout()
             case Section.goods.index:
                 return self.creatGoodsSectionLayout()
             default:
@@ -50,7 +71,7 @@ extension HomeViewController {
     
     private func creatBannerSectionLayout() -> NSCollectionLayoutSection {
         let itemsize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                              heightDimension: .estimated(400))
+                                              heightDimension: .fractionalWidth(0.73))
         let item = NSCollectionLayoutItem(layoutSize: itemsize)
         let groupSize = NSCollectionLayoutSize(widthDimension: itemsize.widthDimension, heightDimension: itemsize.heightDimension)
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 1)
@@ -62,7 +83,7 @@ extension HomeViewController {
     
     private func creatGoodsSectionLayout() -> NSCollectionLayoutSection {
         let itemsize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                              heightDimension: .estimated(250))
+                                              heightDimension: .estimated(200))
         let item = NSCollectionLayoutItem(layoutSize: itemsize)
         let groupSize = NSCollectionLayoutSize(widthDimension: itemsize.widthDimension,
                                                heightDimension: itemsize.heightDimension)
@@ -71,6 +92,41 @@ extension HomeViewController {
         
         return section
     }
+    
+    private func registerCollectionViewCell() {
+        collectionView.register(BannerCell.self)
+        collectionView.register(GoodsCell.self)
+    }
+    
+    private func setupCollectionViewDataSource() {
+        dataSource = UICollectionViewDiffableDataSource<Section, AblyHomeItem>(collectionView: collectionView) { collectionView, indexPath, item in
+            switch item {
+            case .banner(let banner):
+                guard let cell = collectionView.dequeueReusableCell(BannerCell.self, for: indexPath) else {
+                    return UICollectionViewCell()
+                }
+                cell.setupCell(with: banner.image)
+                return cell
+            case .goods(let goods):
+                guard let cell = collectionView.dequeueReusableCell(GoodsCell.self, for: indexPath) else {
+                    return UICollectionViewCell()
+                }
+                cell.setupCell(with: goods)
+                return cell
+            }
+        }
+    }
+    
+    private func populate(banners: [AblyBanner], goods: [AblyGoods]) {
+        let bannerItems = banners.map { AblyHomeItem.banner($0) }
+        let goodsItems = goods.map { AblyHomeItem.goods($0) }
+        var snapshot = NSDiffableDataSourceSnapshot<Section, AblyHomeItem>()
+        snapshot.appendSections([.banners, .goods])
+        snapshot.appendItems(bannerItems, toSection: .banners)
+        snapshot.appendItems(goodsItems, toSection: .goods)
+        dataSource?.apply(snapshot)
+    }
+    
 
 }
 

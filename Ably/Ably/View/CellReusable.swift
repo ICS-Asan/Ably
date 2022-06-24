@@ -6,7 +6,7 @@ protocol CellReusable {
 }
 
 extension CellReusable {
-    func register<T: UITableViewCell>(_ cellClass: T.Type) {
+    func register<T: UICollectionViewCell>(_ cellClass: T.Type) {
         register(cellClass, forCellWithReuseIdentifier: String(describing: cellClass))
     }
     
