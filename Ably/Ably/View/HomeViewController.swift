@@ -83,7 +83,7 @@ extension HomeViewController {
     
     private func creatGoodsSectionLayout() -> NSCollectionLayoutSection {
         let itemsize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                              heightDimension: .estimated(200))
+                                              heightDimension: .estimated(150))
         let item = NSCollectionLayoutItem(layoutSize: itemsize)
         let groupSize = NSCollectionLayoutSize(widthDimension: itemsize.widthDimension,
                                                heightDimension: itemsize.heightDimension)

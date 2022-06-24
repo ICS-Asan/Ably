@@ -1,18 +1,20 @@
 import UIKit
+import SnapKit
 import SDWebImage
 
 class GoodsCell: UICollectionViewCell {
     private let containerView: UIView = {
         let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        
+
         return view
     }()
     
     private let goodsImageView: UIImageView = {
         let imageView = UIImageView(frame: .zero)
-        imageView.layer.cornerRadius = 10
-        
+        imageView.layer.cornerRadius = 5
+        imageView.layer.masksToBounds = true
+        imageView.layer.borderColor = UIColor.secondarySystemBackground.cgColor
+        imageView.layer.borderWidth = 1
         return imageView
     }()
     
@@ -39,7 +41,6 @@ class GoodsCell: UICollectionViewCell {
         stackView.axis = .horizontal
         stackView.alignment = .leading
         stackView.spacing = 5
-        stackView.translatesAutoresizingMaskIntoConstraints = false
         
         return stackView
     }()
@@ -63,12 +64,13 @@ class GoodsCell: UICollectionViewCell {
         return label
     }()
     
-    private let newBadgeLable: UILabel = {
+    private let newBadgeLabel: UILabel = {
        let label = UILabel()
         label.text = "NEW"
-        label.font = .preferredFont(forTextStyle: .caption1).bold
+        label.font = .preferredFont(forTextStyle: .caption2).bold
         label.textColor = Design.Color.secondaryText
-        label.layer.cornerRadius = 10
+        label.textAlignment = .center
+        label.layer.cornerRadius = 3
         label.layer.borderWidth = 1
         label.layer.borderColor = Design.Color.secondaryText.cgColor
         
@@ -78,9 +80,9 @@ class GoodsCell: UICollectionViewCell {
     private let sellInformationStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
-        stackView.alignment = .leading
+        stackView.alignment = .center
         stackView.spacing = 5
-        
+        stackView.setContentHuggingPriority(.defaultHigh, for: .vertical)
        return stackView
     }()
     
@@ -88,8 +90,8 @@ class GoodsCell: UICollectionViewCell {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.alignment = .leading
-        stackView.distribution = .fillProportionally
-        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.distribution = .fill
+        stackView.spacing = 20
         
         return stackView
     }()
@@ -108,7 +110,7 @@ class GoodsCell: UICollectionViewCell {
         configureGoodsImageView(with: goods.image)
         configureSellCountLable(with: goods.sellCount)
         configureDiscountPriceRateLable(with: goods.discountPriceRate)
-        newBadgeLable.isHidden = !goods.isNew
+        newBadgeLabel.isHidden = !goods.isNew
         priceLabel.text = String(goods.price)
         goodsNameLabel.text = goods.name
     }
@@ -141,6 +143,7 @@ class GoodsCell: UICollectionViewCell {
         setupGoodsImageViewLayout()
         setupPriceStackView()
         setupGoodsInformationStackView()
+        drawUnderLine()
     }
     
     private func setupContainerViewLayout() {
@@ -169,8 +172,9 @@ class GoodsCell: UICollectionViewCell {
     private func setupPriceStackViewLayout() {
         containerView.addSubview(priceStackView)
         priceStackView.snp.makeConstraints { make in
-            make.top.equalTo(goodsImageView).offset(5)
-            make.leading.equalTo(goodsImageView).offset(10)
+            make.top.equalTo(goodsImageView.snp.top).inset(5)
+            make.leading.equalTo(goodsImageView.snp.trailing).inset(-10)
+            make.height.equalTo(priceLabel.snp.height)
         }
     }
     
@@ -178,23 +182,38 @@ class GoodsCell: UICollectionViewCell {
         setupSellInformationStackView()
         goodsInformationStackView.addArrangedSubview(goodsNameLabel)
         goodsInformationStackView.addArrangedSubview(sellInformationStackView)
+        newBadgeLabel.snp.makeConstraints { make in
+            make.width.equalTo(35)
+            make.height.equalTo(17)
+        }
         setupGoodsInformationStackViewLayout()
     }
     
     private func setupSellInformationStackView() {
-        sellInformationStackView.addArrangedSubview(newBadgeLable)
+        sellInformationStackView.addArrangedSubview(newBadgeLabel)
         sellInformationStackView.addArrangedSubview(sellCountLabel)
-        newBadgeLable.isHidden = true
+        newBadgeLabel.isHidden = true
     }
     
     private func setupGoodsInformationStackViewLayout() {
         containerView.addSubview(goodsInformationStackView)
         goodsInformationStackView.snp.makeConstraints { make in
-            make.top.equalTo(priceStackView).offset(10)
+            make.top.equalTo(priceStackView.snp.bottom).inset(-10)
             make.leading.equalTo(priceStackView)
-            make.trailing.equalToSuperview()
-            make.bottom.equalToSuperview().inset(30)
+            make.trailing.equalToSuperview().inset(20)
         }
+    }
+    
+    func drawUnderLine() {
+        let underLine = CALayer()
+        underLine.frame = CGRect(
+            x: 0,
+            y: contentView.frame.height,
+            width: contentView.frame.width,
+            height: 1
+        )
+        underLine.backgroundColor = UIColor.secondarySystemBackground.cgColor
+        layer.addSublayer(underLine)
     }
 }
 
