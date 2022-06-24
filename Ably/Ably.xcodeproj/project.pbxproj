@@ -10,7 +10,7 @@
 		479911512864BB3200F7C5F2 /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479911502864BB3200F7C5F2 /* Design.swift */; };
 		47A3EF712862D7B70026C400 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A3EF702862D7B70026C400 /* AppDelegate.swift */; };
 		47A3EF732862D7B70026C400 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A3EF722862D7B70026C400 /* SceneDelegate.swift */; };
-		47A3EF752862D7B70026C400 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A3EF742862D7B70026C400 /* ViewController.swift */; };
+		47A3EF752862D7B70026C400 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A3EF742862D7B70026C400 /* HomeViewController.swift */; };
 		47A3EF782862D7B70026C400 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47A3EF762862D7B70026C400 /* Main.storyboard */; };
 		47A3EF7A2862D7BA0026C400 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47A3EF792862D7BA0026C400 /* Assets.xcassets */; };
 		47A3EF7D2862D7BA0026C400 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47A3EF7B2862D7BA0026C400 /* LaunchScreen.storyboard */; };
@@ -40,7 +40,7 @@
 		47A3EF6D2862D7B70026C400 /* Ably.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ably.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47A3EF702862D7B70026C400 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		47A3EF722862D7B70026C400 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		47A3EF742862D7B70026C400 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		47A3EF742862D7B70026C400 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		47A3EF772862D7B70026C400 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		47A3EF792862D7BA0026C400 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		47A3EF7C2862D7BA0026C400 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -190,7 +190,7 @@
 			children = (
 				47AFB9D82864BAC1005501FA /* Utility */,
 				47AFB9D52864AE54005501FA /* AblyTabBarController.swift */,
-				47A3EF742862D7B70026C400 /* ViewController.swift */,
+				47A3EF742862D7B70026C400 /* HomeViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -293,7 +293,7 @@
 				47AFB9B92862FE53005501FA /* URLRequest+extension.swift in Sources */,
 				47AFB9CB286480A2005501FA /* AblyHomeDataRepository.swift in Sources */,
 				47AFB9BB2862FF56005501FA /* EndPoint.swift in Sources */,
-				47A3EF752862D7B70026C400 /* ViewController.swift in Sources */,
+				47A3EF752862D7B70026C400 /* HomeViewController.swift in Sources */,
 				47AFB9B62862FDC0005501FA /* AblyGoodsDTO.swift in Sources */,
 				479911512864BB3200F7C5F2 /* Design.swift in Sources */,
 				47AFB9BF28634BBE005501FA /* JSONParser.swift in Sources */,

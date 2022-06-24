@@ -1,7 +1,7 @@
 import UIKit
 
 final class AblyTabBarController: UITabBarController {
-    let homeNavigationController = UINavigationController(rootViewController: ViewController())
+    let homeNavigationController = UINavigationController(rootViewController: HomeViewController())
     let favoritNavigationController = UIViewController()
     
     init() {
