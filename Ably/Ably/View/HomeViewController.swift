@@ -29,6 +29,7 @@ class HomeViewController: UIViewController {
     private let viewModel = HomeViewModel()
     private let loadFinishedObserver: PublishSubject<AblyHomeData> = .init()
     private let refreshObserver: PublishSubject<AblyHomeData> = .init()
+    private let didTabFavoriteButton: PublishSubject<Int> = .init()
     private let disposeBag: DisposeBag = .init()
     
     init() {
@@ -77,7 +78,8 @@ class HomeViewController: UIViewController {
     private func bind() {
         let input = HomeViewModel.Input(
             loadFinishedObserver: loadFinishedObserver,
-            refreshObserver: refreshObserver
+            refreshObserver: refreshObserver,
+            didTabFavoriteButton: didTabFavoriteButton
         )
         let _ = viewModel.transform(input)
     }
@@ -146,6 +148,9 @@ extension HomeViewController {
             case .goods(let goods):
                 guard let cell = collectionView.dequeueReusableCell(GoodsCell.self, for: indexPath) else {
                     return UICollectionViewCell()
+                }
+                cell.changeFavoriteState = {
+                    self.didTabFavoriteButton.onNext(indexPath.row)
                 }
                 cell.setupCell(with: goods)
                 return cell

@@ -3,9 +3,14 @@ import SnapKit
 import SDWebImage
 
 class GoodsCell: UICollectionViewCell {
+    var changeFavoriteState: (() -> Void)?
+    private var isFavorite: Bool {
+        return favoriteButton.tintColor == Design.Color.main
+    }
+    
     private let containerView: UIView = {
         let view = UIView()
-
+        
         return view
     }()
     
@@ -33,7 +38,7 @@ class GoodsCell: UICollectionViewCell {
         label.font = .preferredFont(forTextStyle: .body).bold
         label.textColor = Design.Color.main
         label.textAlignment = .left
-    
+        
         return label
     }()
     
@@ -42,7 +47,7 @@ class GoodsCell: UICollectionViewCell {
         label.font = .preferredFont(forTextStyle: .body).bold
         label.textColor = Design.Color.primaryText
         label.textAlignment = .left
-    
+        
         return label
     }()
     
@@ -75,7 +80,7 @@ class GoodsCell: UICollectionViewCell {
     }()
     
     private let newBadgeLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.text = "NEW"
         label.font = .preferredFont(forTextStyle: .caption2).bold
         label.textColor = Design.Color.secondaryText
@@ -93,7 +98,7 @@ class GoodsCell: UICollectionViewCell {
         stackView.alignment = .center
         stackView.spacing = 5
         stackView.setContentHuggingPriority(.defaultHigh, for: .vertical)
-       return stackView
+        return stackView
     }()
     
     private let goodsInformationStackView: UIStackView = {
@@ -120,10 +125,11 @@ class GoodsCell: UICollectionViewCell {
         configureGoodsImageView(with: goods.image)
         configureSellCountLable(with: goods.sellCount)
         configureDiscountPriceRateLable(with: goods.discountPriceRate)
-        configureFavoriteButton(isFavorit: goods.isFavorite)
+        configureFavoriteButton(favoriteState: goods.isFavorite)
         newBadgeLabel.isHidden = !goods.isNew
         priceLabel.text = String(goods.price)
         goodsNameLabel.text = goods.name
+        favoriteButton.addTarget(self, action: #selector(didTabFavoriteButton), for: .touchDown)
     }
     
     func configureGoodsImageView(with url: String) {
@@ -149,8 +155,8 @@ class GoodsCell: UICollectionViewCell {
         }
     }
     
-    private func configureFavoriteButton(isFavorit: Bool) {
-        if isFavorit {
+    private func configureFavoriteButton(favoriteState: Bool) {
+        if favoriteState {
             favoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
             favoriteButton.tintColor = Design.Color.main
         } else {
@@ -226,6 +232,21 @@ class GoodsCell: UICollectionViewCell {
             make.top.equalTo(priceStackView.snp.bottom).inset(-10)
             make.leading.equalTo(priceStackView)
             make.trailing.equalToSuperview().inset(20)
+        }
+    }
+    
+    @objc private func didTabFavoriteButton() {
+        changeFavoriteState?()
+        toggleFavoriteButtonImage()
+    }
+    
+    func toggleFavoriteButtonImage() {
+        if isFavorite {
+            favoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
+            favoriteButton.tintColor = .white
+        } else {
+            favoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            favoriteButton.tintColor = Design.Color.main
         }
     }
     

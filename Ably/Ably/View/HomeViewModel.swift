@@ -13,7 +13,7 @@ class HomeViewModel {
     private let disposeBag: DisposeBag = .init()
     private var homeData = AblyHomeData(banners: [], goods: [])
     private(set) var banners: [AblyBanner] = []
-    private(set) var goods: [AblyGoods] = []
+    var goods: [AblyGoods] = []
     
     func transform(_ input: Input) -> Output {
         input
@@ -26,6 +26,12 @@ class HomeViewModel {
             .refreshObserver
             .subscribe(onNext: { [weak self] data in
                 self?.refreshAblyHomeData(homeData: data)
+            })
+            .disposed(by: disposeBag)
+        input
+            .didTabFavoriteButton
+            .subscribe(onNext: { [weak self] index in
+                self?.toggleFavoriteState(at: index)
             })
             .disposed(by: disposeBag)
         
@@ -51,16 +57,26 @@ class HomeViewModel {
         self.banners += (homeData.banners ?? [])
         self.goods += homeData.goods
     }
+    
+    func toggleFavoriteState(at index: Int) {
+        self.goods[index].isFavorite.toggle()
+    }
 }
 
 extension HomeViewModel {
     final class Input {
         let loadDataObserver: Observable<AblyHomeData>
         let refreshObserver: Observable<AblyHomeData>
+        let didTabFavoriteButton: Observable<Int>
 
-        init(loadFinishedObserver: Observable<AblyHomeData>, refreshObserver: Observable<AblyHomeData>) {
+        init(
+            loadFinishedObserver: Observable<AblyHomeData>,
+            refreshObserver: Observable<AblyHomeData>,
+            didTabFavoriteButton: Observable<Int>
+        ) {
             self.loadDataObserver = loadFinishedObserver
             self.refreshObserver = refreshObserver
+            self.didTabFavoriteButton = didTabFavoriteButton
         }
     }
 
