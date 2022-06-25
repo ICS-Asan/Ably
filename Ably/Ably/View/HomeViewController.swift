@@ -1,12 +1,6 @@
-//
-//  ViewController.swift
-//  Ably
-//
-//  Created by Seul Mac on 2022/06/22.
-//
-
 import UIKit
 import RxSwift
+import RxCocoa
 
 class HomeViewController: UIViewController {
     
@@ -31,6 +25,7 @@ class HomeViewController: UIViewController {
     
     private var collectionView: UICollectionView!
     private var dataSource: UICollectionViewDiffableDataSource<Section, AblyHomeItem>?
+    private var refreshControl = UIRefreshControl()
     private let viewModel = HomeViewModel()
     private let loadFinishedObserver: PublishSubject<AblyHomeData> = .init()
     private let disposeBag: DisposeBag = .init()
@@ -57,13 +52,26 @@ class HomeViewController: UIViewController {
         }
         collectionView.dataSource = dataSource
         viewModel.fetchAblyHomeData()
-            .subscribe(on: MainScheduler.asyncInstance)
+            .observe(on: MainScheduler.instance)
             .subscribe(onNext: { [weak self] data in
                 self?.populate(banners: data.banners ?? [], goods: data.goods)
                 self?.loadFinishedObserver.onNext(data)
             })
             .disposed(by: disposeBag)
-        }
+        collectionView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+    }
+    
+    @objc func refresh() {
+        viewModel.fetchAblyHomeData()
+            .observe(on: MainScheduler.instance)
+            .subscribe(onNext: { [weak self] data in
+                self?.populate(banners: data.banners ?? [], goods: data.goods)
+                    self?.loadFinishedObserver.onNext(data)
+                    self?.refreshControl.endRefreshing()
+            })
+            .disposed(by: disposeBag)
+    }
     
     private func bind() {
         let input = HomeViewModel.Input(loadFinishedObserver: loadFinishedObserver)
@@ -145,5 +153,5 @@ extension HomeViewController {
         snapshot.appendItems(goodsItems, toSection: .goods)
         dataSource?.apply(snapshot)
     }
-
+    
 }
