@@ -31,7 +31,7 @@ class HomeViewController: UIViewController {
     
     private var collectionView: UICollectionView!
     private var dataSource: UICollectionViewDiffableDataSource<Section, AblyHomeItem>?
-    let useCase = AblyHomeDataUseCase()
+    private let viewModel = HomeViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +44,7 @@ class HomeViewController: UIViewController {
             make.edges.equalTo(view.safeAreaLayoutGuide)
         }
         collectionView.dataSource = dataSource
-        useCase.fetchAblyHomeData()
+        viewModel.fetchAblyHomeData()
             .subscribe(on: MainScheduler.asyncInstance)
             .subscribe(onNext: { data in
                 self.populate(banners: data.banners ?? [], goods: data.goods)
@@ -126,7 +126,5 @@ extension HomeViewController {
         snapshot.appendItems(goodsItems, toSection: .goods)
         dataSource?.apply(snapshot)
     }
-    
 
 }
-
