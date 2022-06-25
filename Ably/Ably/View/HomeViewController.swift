@@ -32,7 +32,18 @@ class HomeViewController: UIViewController {
     private var collectionView: UICollectionView!
     private var dataSource: UICollectionViewDiffableDataSource<Section, AblyHomeItem>?
     private let viewModel = HomeViewModel()
+    private let loadFinishedObserver: PublishSubject<AblyHomeData> = .init()
     private let disposeBag: DisposeBag = .init()
+    
+    init() {
+        super.init(nibName: nil, bundle: nil)
+        bind()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        bind()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,10 +60,15 @@ class HomeViewController: UIViewController {
             .subscribe(on: MainScheduler.asyncInstance)
             .subscribe(onNext: { [weak self] data in
                 self?.populate(banners: data.banners ?? [], goods: data.goods)
-                self?.viewModel.storeFetchedData(homeData: data)
+                self?.loadFinishedObserver.onNext(data)
             })
             .disposed(by: disposeBag)
         }
+    
+    private func bind() {
+        let input = HomeViewModel.Input(loadFinishedObserver: loadFinishedObserver)
+        let _ = viewModel.transform(input)
+    }
     
 }
 
