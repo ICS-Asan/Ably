@@ -32,6 +32,7 @@ class HomeViewController: UIViewController {
     private var collectionView: UICollectionView!
     private var dataSource: UICollectionViewDiffableDataSource<Section, AblyHomeItem>?
     private let viewModel = HomeViewModel()
+    private let disposeBag: DisposeBag = .init()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,10 +47,12 @@ class HomeViewController: UIViewController {
         collectionView.dataSource = dataSource
         viewModel.fetchAblyHomeData()
             .subscribe(on: MainScheduler.asyncInstance)
-            .subscribe(onNext: { data in
-                self.populate(banners: data.banners ?? [], goods: data.goods)
+            .subscribe(onNext: { [weak self] data in
+                self?.populate(banners: data.banners ?? [], goods: data.goods)
+                self?.viewModel.storeFetchedData(homeData: data)
             })
-    }
+            .disposed(by: disposeBag)
+        }
     
 }
 
