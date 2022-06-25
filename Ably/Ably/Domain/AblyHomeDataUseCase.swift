@@ -12,7 +12,7 @@ class AblyHomeDataUseCase {
         return ablyHomeDataRepository.fetchAblyHomeData()
     }
     
-    func fetchAblyGoodsForPaging(with lastId: Int) -> Observable<AblyHomeData> {
+    func fetchAblyGoodsForPagination(with lastId: Int) -> Observable<AblyHomeData> {
         return ablyHomeDataRepository.fetchAblyGoodsForPaging(with: lastId)
     }
 }

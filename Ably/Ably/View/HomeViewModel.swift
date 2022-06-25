@@ -30,10 +30,14 @@ class HomeViewModel {
         return homeDataUseCase.fetchAblyHomeData()
     }
     
+    func fetchAblyGoodsForPagination() -> Observable<AblyHomeData> {
+        return homeDataUseCase.fetchAblyGoodsForPagination(with: goods.last?.id ?? 1)
+    }
+    
     func storeFetchedAblyHomeData(homeData: AblyHomeData) {
         self.homeData = homeData
-        self.banners = homeData.banners ?? []
-        self.goods = homeData.goods
+        self.banners += (homeData.banners ?? [])
+        self.goods += homeData.goods
     }
 }
 

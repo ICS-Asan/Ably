@@ -127,6 +127,11 @@ extension HomeViewController {
     
     private func setupCollectionViewDataSource() {
         dataSource = UICollectionViewDiffableDataSource<Section, AblyHomeItem>(collectionView: collectionView) { collectionView, indexPath, item in
+            print(indexPath.row)
+            if indexPath.row == self.viewModel.goods.count - 1 {
+                self.fetchAblyGoodsForPagination()
+            }
+            
             switch item {
             case .banner(let banner):
                 guard let cell = collectionView.dequeueReusableCell(BannerCell.self, for: indexPath) else {
@@ -144,7 +149,18 @@ extension HomeViewController {
         }
     }
     
-    private func populate(banners: [AblyBanner], goods: [AblyGoods]) {
+    private func fetchAblyGoodsForPagination() {
+        self.viewModel.fetchAblyGoodsForPagination()
+            .observe(on: MainScheduler.instance)
+            .subscribe(onNext: { [weak self] data in
+                self?.loadFinishedObserver.onNext(data)
+                self?.populate(banners: self?.viewModel.banners, goods: self?.viewModel.goods)
+            })
+            .disposed(by: self.disposeBag)
+    }
+    
+    private func populate(banners: [AblyBanner]?, goods: [AblyGoods]?) {
+        guard let banners = banners, let goods = goods else { return }
         let bannerItems = banners.map { AblyHomeItem.banner($0) }
         let goodsItems = goods.map { AblyHomeItem.goods($0) }
         var snapshot = NSDiffableDataSourceSnapshot<Section, AblyHomeItem>()
