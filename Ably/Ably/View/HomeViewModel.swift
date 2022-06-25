@@ -19,7 +19,7 @@ class HomeViewModel {
         input
             .loadFinishedObserver
             .subscribe(onNext: { [weak self] data in
-                self?.storeFetchedData(homeData: data)
+                self?.storeFetchedAblyHomeData(homeData: data)
             })
             .disposed(by: disposeBag)
         
@@ -30,7 +30,7 @@ class HomeViewModel {
         return homeDataUseCase.fetchAblyHomeData()
     }
     
-    func storeFetchedData(homeData: AblyHomeData) {
+    func storeFetchedAblyHomeData(homeData: AblyHomeData) {
         self.homeData = homeData
         self.banners = homeData.banners ?? []
         self.goods = homeData.goods
