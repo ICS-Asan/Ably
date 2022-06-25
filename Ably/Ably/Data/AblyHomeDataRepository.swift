@@ -1,7 +1,7 @@
 import Foundation
 import RxSwift
 
-class AblyHomeDataRepository {
+class AblyHomeDataRepository: AblyAPIRepository {
     
     func fetchAblyHomeData() -> Observable<AblyHomeData> {
         let ablyHomeData = HTTPNetwork.shared.fetch(with: EndPoint.home.url)

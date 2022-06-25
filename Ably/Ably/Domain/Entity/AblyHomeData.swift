@@ -1,6 +1,6 @@
 import Foundation
 
-struct AblyHomeData {
+struct AblyHomeData: Hashable {
     let banners: [AblyBanner]?
     let goods: [AblyGoods]
 }
