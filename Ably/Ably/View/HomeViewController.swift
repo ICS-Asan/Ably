@@ -28,6 +28,7 @@ class HomeViewController: UIViewController {
     private var refreshControl = UIRefreshControl()
     private let viewModel = HomeViewModel()
     private let loadFinishedObserver: PublishSubject<AblyHomeData> = .init()
+    private let refreshObserver: PublishSubject<AblyHomeData> = .init()
     private let disposeBag: DisposeBag = .init()
     
     init() {
@@ -66,15 +67,18 @@ class HomeViewController: UIViewController {
         viewModel.fetchAblyHomeData()
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { [weak self] data in
-                self?.populate(banners: data.banners ?? [], goods: data.goods)
-                    self?.loadFinishedObserver.onNext(data)
-                    self?.refreshControl.endRefreshing()
+                self?.populate(banners: data.banners, goods: data.goods)
+                self?.refreshObserver.onNext(data)
+                self?.refreshControl.endRefreshing()
             })
             .disposed(by: disposeBag)
     }
     
     private func bind() {
-        let input = HomeViewModel.Input(loadFinishedObserver: loadFinishedObserver)
+        let input = HomeViewModel.Input(
+            loadFinishedObserver: loadFinishedObserver,
+            refreshObserver: refreshObserver
+        )
         let _ = viewModel.transform(input)
     }
     

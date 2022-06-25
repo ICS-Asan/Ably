@@ -17,9 +17,15 @@ class HomeViewModel {
     
     func transform(_ input: Input) -> Output {
         input
-            .loadFinishedObserver
+            .loadDataObserver
             .subscribe(onNext: { [weak self] data in
                 self?.storeFetchedAblyHomeData(homeData: data)
+            })
+            .disposed(by: disposeBag)
+        input
+            .refreshObserver
+            .subscribe(onNext: { [weak self] data in
+                self?.refreshAblyHomeData(homeData: data)
             })
             .disposed(by: disposeBag)
         
@@ -34,6 +40,12 @@ class HomeViewModel {
         return homeDataUseCase.fetchAblyGoodsForPagination(with: goods.last?.id ?? 1)
     }
     
+    func refreshAblyHomeData(homeData: AblyHomeData) {
+        self.homeData = homeData
+        self.banners = homeData.banners ?? []
+        self.goods = homeData.goods
+    }
+    
     func storeFetchedAblyHomeData(homeData: AblyHomeData) {
         self.homeData = homeData
         self.banners += (homeData.banners ?? [])
@@ -43,10 +55,12 @@ class HomeViewModel {
 
 extension HomeViewModel {
     final class Input {
-        let loadFinishedObserver: Observable<AblyHomeData>
+        let loadDataObserver: Observable<AblyHomeData>
+        let refreshObserver: Observable<AblyHomeData>
 
-        init(loadFinishedObserver: Observable<AblyHomeData>) {
-            self.loadFinishedObserver = loadFinishedObserver
+        init(loadFinishedObserver: Observable<AblyHomeData>, refreshObserver: Observable<AblyHomeData>) {
+            self.loadDataObserver = loadFinishedObserver
+            self.refreshObserver = refreshObserver
         }
     }
 
