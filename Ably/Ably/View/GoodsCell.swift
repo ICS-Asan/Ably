@@ -120,6 +120,7 @@ class GoodsCell: UICollectionViewCell {
         configureGoodsImageView(with: goods.image)
         configureSellCountLable(with: goods.sellCount)
         configureDiscountPriceRateLable(with: goods.discountPriceRate)
+        configureFavoriteButton(isFavorit: goods.isFavorite)
         newBadgeLabel.isHidden = !goods.isNew
         priceLabel.text = String(goods.price)
         goodsNameLabel.text = goods.name
@@ -145,6 +146,16 @@ class GoodsCell: UICollectionViewCell {
             sellCountLabel.text = String(sellCount) + "개 구매중"
         } else {
             sellCountLabel.isHidden = true
+        }
+    }
+    
+    private func configureFavoriteButton(isFavorit: Bool) {
+        if isFavorit {
+            favoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            favoriteButton.tintColor = Design.Color.main
+        } else {
+            favoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
+            favoriteButton.tintColor = .white
         }
     }
     

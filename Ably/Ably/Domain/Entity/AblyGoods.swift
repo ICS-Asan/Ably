@@ -8,6 +8,7 @@ struct AblyGoods: Hashable {
     let sellCount: Int
     let actualPrice: Int
     let price: Int
+    var isFavorite: Bool = false
     
     var discountPriceRate: Int {
         let decimalActualPrice = Decimal(actualPrice)
