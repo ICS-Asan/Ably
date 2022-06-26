@@ -22,4 +22,29 @@ class RealmManager {
             return Disposables.create()
         }
     }
+    
+    func append(ablyGoods: AblyGoods) {
+        let favoriteGoods = AblyGoodsRealmDTO(
+            id: ablyGoods.id,
+            price: ablyGoods.price,
+            actualPrice: ablyGoods.actualPrice,
+            sellCount: ablyGoods.sellCount,
+            discountRate: ablyGoods.discountPriceRate,
+            name: ablyGoods.name,
+            image: ablyGoods.image,
+            isNew: ablyGoods.isNew,
+            isFavorite: ablyGoods.isFavorite)
+        
+        try! self.realm.write{
+            self.realm.add(favoriteGoods)
+        }
+    }
+    
+    func delete(ablyGoods: AblyGoods) {
+        let goodsForDelete = realm.objects(AblyGoodsRealmDTO.self).filter("id == %@", ablyGoods)
+        
+        try! self.realm.write{
+            self.realm.delete(goodsForDelete)
+        }
+    }
 }

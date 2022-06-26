@@ -23,7 +23,7 @@ final class AblyGoodsRealmDTO: Object {
         sellCount: Int,
         discountRate: Int,
         name: String,
-        imageURL: String,
+        image: String,
         isNew: Bool,
         isFavorite: Bool
     )
@@ -34,7 +34,7 @@ final class AblyGoodsRealmDTO: Object {
         self.sellCount = sellCount
         self.discountRate = discountRate
         self.name = name
-        self.image = imageURL
+        self.image = image
         self.isNew = isNew
         self.isFavorite = isFavorite
     }
