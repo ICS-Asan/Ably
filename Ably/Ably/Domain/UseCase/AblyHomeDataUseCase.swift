@@ -2,11 +2,11 @@ import Foundation
 import RxSwift
 
 class AblyHomeDataUseCase {
-    let ablyHomeDataRepository: AblyAPIRepository
+    let ablyHomeDataRepository: NetworkRepository
     let realmRepository: RealmRepository
     
     init(
-        ablyHomeDataRepository: AblyAPIRepository = AblyHomeDataRepository(),
+        ablyHomeDataRepository: NetworkRepository = AblyNetworkRepository(),
         realmRepository: RealmRepository = AblyRealmRepository()
     ) {
         self.ablyHomeDataRepository = ablyHomeDataRepository

@@ -43,8 +43,8 @@
 		47AFB9C52864519B005501FA /* AblyBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AFB9C42864519B005501FA /* AblyBanner.swift */; };
 		47AFB9C7286451A9005501FA /* AblyGoods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AFB9C6286451A9005501FA /* AblyGoods.swift */; };
 		47AFB9C928645874005501FA /* HTTPNetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AFB9C828645874005501FA /* HTTPNetworkError.swift */; };
-		47AFB9CB286480A2005501FA /* AblyHomeDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AFB9CA286480A2005501FA /* AblyHomeDataRepository.swift */; };
-		47AFB9D128648FDF005501FA /* AblyAPIRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AFB9D028648FDF005501FA /* AblyAPIRepository.swift */; };
+		47AFB9CB286480A2005501FA /* AblyNetworkRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AFB9CA286480A2005501FA /* AblyNetworkRepository.swift */; };
+		47AFB9D128648FDF005501FA /* NetworkRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AFB9D028648FDF005501FA /* NetworkRepository.swift */; };
 		47AFB9D3286495FA005501FA /* AblyHomeDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AFB9D2286495FA005501FA /* AblyHomeDataUseCase.swift */; };
 		47AFB9D62864AE54005501FA /* AblyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AFB9D52864AE54005501FA /* AblyTabBarController.swift */; };
 /* End PBXBuildFile section */
@@ -81,8 +81,8 @@
 		47AFB9C42864519B005501FA /* AblyBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AblyBanner.swift; sourceTree = "<group>"; };
 		47AFB9C6286451A9005501FA /* AblyGoods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AblyGoods.swift; sourceTree = "<group>"; };
 		47AFB9C828645874005501FA /* HTTPNetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPNetworkError.swift; sourceTree = "<group>"; };
-		47AFB9CA286480A2005501FA /* AblyHomeDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AblyHomeDataRepository.swift; sourceTree = "<group>"; };
-		47AFB9D028648FDF005501FA /* AblyAPIRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AblyAPIRepository.swift; sourceTree = "<group>"; };
+		47AFB9CA286480A2005501FA /* AblyNetworkRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AblyNetworkRepository.swift; sourceTree = "<group>"; };
+		47AFB9D028648FDF005501FA /* NetworkRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRepository.swift; sourceTree = "<group>"; };
 		47AFB9D2286495FA005501FA /* AblyHomeDataUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AblyHomeDataUseCase.swift; sourceTree = "<group>"; };
 		47AFB9D52864AE54005501FA /* AblyTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AblyTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -134,7 +134,7 @@
 		4779430E28687F9700872C54 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				47AFB9CA286480A2005501FA /* AblyHomeDataRepository.swift */,
+				47AFB9CA286480A2005501FA /* AblyNetworkRepository.swift */,
 				477943032868620400872C54 /* AblyRealmRepository.swift */,
 			);
 			path = Repository;
@@ -287,7 +287,7 @@
 		47AFB9CF28648FCF005501FA /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				47AFB9D028648FDF005501FA /* AblyAPIRepository.swift */,
+				47AFB9D028648FDF005501FA /* NetworkRepository.swift */,
 				477943142868854300872C54 /* RealmRepository.swift */,
 			);
 			path = Protocol;
@@ -409,11 +409,11 @@
 				4799115C286701C800F7C5F2 /* HomeViewModel.swift in Sources */,
 				47AFB9C328645123005501FA /* AblyHomeData.swift in Sources */,
 				477943042868620400872C54 /* AblyRealmRepository.swift in Sources */,
-				47AFB9D128648FDF005501FA /* AblyAPIRepository.swift in Sources */,
+				47AFB9D128648FDF005501FA /* NetworkRepository.swift in Sources */,
 				47AFB9D3286495FA005501FA /* AblyHomeDataUseCase.swift in Sources */,
 				47AFB9B92862FE53005501FA /* URLRequest+extension.swift in Sources */,
 				4799115528658A6D00F7C5F2 /* GoodsCell.swift in Sources */,
-				47AFB9CB286480A2005501FA /* AblyHomeDataRepository.swift in Sources */,
+				47AFB9CB286480A2005501FA /* AblyNetworkRepository.swift in Sources */,
 				4779430228685D2100872C54 /* RealmManager.swift in Sources */,
 				47AFB9BB2862FF56005501FA /* EndPoint.swift in Sources */,
 				4779430A28687CFD00872C54 /* Int+extension.swift in Sources */,
