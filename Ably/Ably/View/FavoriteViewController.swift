@@ -12,6 +12,7 @@ class FavoriteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = Design.Text.favoritViewTitle
+        setupFavoriteCollectionView()
     }
 }
 
