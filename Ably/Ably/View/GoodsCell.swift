@@ -127,7 +127,7 @@ class GoodsCell: UICollectionViewCell {
         configureDiscountPriceRateLable(with: goods.discountPriceRate)
         configureFavoriteButton(favoriteState: goods.isFavorite)
         newBadgeLabel.isHidden = !goods.isNew
-        priceLabel.text = String(goods.price)
+        priceLabel.text = goods.price.addComma()
         goodsNameLabel.text = goods.name
         favoriteButton.addTarget(self, action: #selector(didTabFavoriteButton), for: .touchDown)
     }
@@ -149,7 +149,7 @@ class GoodsCell: UICollectionViewCell {
     func configureSellCountLable(with sellCount: Int) {
         if sellCount >= 10 {
             sellCountLabel.isHidden = false
-            sellCountLabel.text = String(sellCount) + "개 구매중"
+            sellCountLabel.text = sellCount.addComma() + "개 구매중"
         } else {
             sellCountLabel.isHidden = true
         }
