@@ -1,8 +1,8 @@
 import Foundation
 import RxSwift
 
-class HTTPNetwork {
-    static let shared = HTTPNetwork()
+class HTTPNetworkManager {
+    static let shared = HTTPNetworkManager()
     let urlSession: URLSession
     
     init(urlSession: URLSession = URLSession.shared) {

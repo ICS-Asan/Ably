@@ -37,7 +37,7 @@
 		47AFB9B62862FDC0005501FA /* AblyGoodsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AFB9B52862FDC0005501FA /* AblyGoodsDTO.swift */; };
 		47AFB9B92862FE53005501FA /* URLRequest+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AFB9B82862FE53005501FA /* URLRequest+extension.swift */; };
 		47AFB9BB2862FF56005501FA /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AFB9BA2862FF56005501FA /* EndPoint.swift */; };
-		47AFB9BD28634784005501FA /* HTTPNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AFB9BC28634784005501FA /* HTTPNetwork.swift */; };
+		47AFB9BD28634784005501FA /* HTTPNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AFB9BC28634784005501FA /* HTTPNetworkManager.swift */; };
 		47AFB9BF28634BBE005501FA /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AFB9BE28634BBE005501FA /* JSONParser.swift */; };
 		47AFB9C328645123005501FA /* AblyHomeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AFB9C228645123005501FA /* AblyHomeData.swift */; };
 		47AFB9C52864519B005501FA /* AblyBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AFB9C42864519B005501FA /* AblyBanner.swift */; };
@@ -75,7 +75,7 @@
 		47AFB9B52862FDC0005501FA /* AblyGoodsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AblyGoodsDTO.swift; sourceTree = "<group>"; };
 		47AFB9B82862FE53005501FA /* URLRequest+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+extension.swift"; sourceTree = "<group>"; };
 		47AFB9BA2862FF56005501FA /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
-		47AFB9BC28634784005501FA /* HTTPNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPNetwork.swift; sourceTree = "<group>"; };
+		47AFB9BC28634784005501FA /* HTTPNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPNetworkManager.swift; sourceTree = "<group>"; };
 		47AFB9BE28634BBE005501FA /* JSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		47AFB9C228645123005501FA /* AblyHomeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AblyHomeData.swift; sourceTree = "<group>"; };
 		47AFB9C42864519B005501FA /* AblyBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AblyBanner.swift; sourceTree = "<group>"; };
@@ -256,7 +256,7 @@
 		47AFB9B72862FE28005501FA /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				47AFB9BC28634784005501FA /* HTTPNetwork.swift */,
+				47AFB9BC28634784005501FA /* HTTPNetworkManager.swift */,
 				47AFB9BA2862FF56005501FA /* EndPoint.swift */,
 				47AFB9C828645874005501FA /* HTTPNetworkError.swift */,
 				47AFB9B22862FD84005501FA /* NetworkDTO */,
@@ -401,7 +401,7 @@
 			files = (
 				4799115A2865F7B200F7C5F2 /* CellReusable.swift in Sources */,
 				4779430028685A5C00872C54 /* AblyGoodsRealmDTO.swift in Sources */,
-				47AFB9BD28634784005501FA /* HTTPNetwork.swift in Sources */,
+				47AFB9BD28634784005501FA /* HTTPNetworkManager.swift in Sources */,
 				47991153286586C300F7C5F2 /* BannerCell.swift in Sources */,
 				47AFB9C928645874005501FA /* HTTPNetworkError.swift in Sources */,
 				47AFB9B02862FC4E005501FA /* AblyHomeDTO.swift in Sources */,
