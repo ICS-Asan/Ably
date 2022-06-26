@@ -9,10 +9,27 @@ class FavoriteViewController: UIViewController {
     
     private var favoriteCollectionView: UICollectionView!
     private var dataSource: UICollectionViewDiffableDataSource<Section, AblyGoods>?
+    private let viewModel = FavoriteViewModel()
+    private let disposeBag: DisposeBag = .init()
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = Design.Text.favoritViewTitle
         setupFavoriteCollectionView()
+        fetchFavoriteGoods()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        fetchFavoriteGoods()
+    }
+    
+    func fetchFavoriteGoods() {
+        viewModel.fetchFavoriteGoods()
+            .observe(on: MainScheduler.instance)
+            .subscribe(onNext: { [weak self] goods in
+                self?.populate(goods: goods)
+            })
+            .disposed(by: disposeBag)
     }
 }
 

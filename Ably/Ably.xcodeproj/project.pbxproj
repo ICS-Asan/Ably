@@ -12,6 +12,8 @@
 		4779430028685A5C00872C54 /* AblyGoodsRealmDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477942FF28685A5C00872C54 /* AblyGoodsRealmDTO.swift */; };
 		4779430228685D2100872C54 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4779430128685D2100872C54 /* RealmManager.swift */; };
 		477943042868620400872C54 /* RealmRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477943032868620400872C54 /* RealmRepository.swift */; };
+		477943062868776F00872C54 /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477943052868776F00872C54 /* FavoriteViewModel.swift */; };
+		47794308286877E500872C54 /* FavoriteUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47794307286877E500872C54 /* FavoriteUseCase.swift */; };
 		479911512864BB3200F7C5F2 /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479911502864BB3200F7C5F2 /* Design.swift */; };
 		47991153286586C300F7C5F2 /* BannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47991152286586C300F7C5F2 /* BannerCell.swift */; };
 		4799115528658A6D00F7C5F2 /* GoodsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4799115428658A6D00F7C5F2 /* GoodsCell.swift */; };
@@ -49,6 +51,8 @@
 		477942FF28685A5C00872C54 /* AblyGoodsRealmDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AblyGoodsRealmDTO.swift; sourceTree = "<group>"; };
 		4779430128685D2100872C54 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		477943032868620400872C54 /* RealmRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmRepository.swift; sourceTree = "<group>"; };
+		477943052868776F00872C54 /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
+		47794307286877E500872C54 /* FavoriteUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteUseCase.swift; sourceTree = "<group>"; };
 		479911502864BB3200F7C5F2 /* Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Design.swift; sourceTree = "<group>"; };
 		47991152286586C300F7C5F2 /* BannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCell.swift; sourceTree = "<group>"; };
 		4799115428658A6D00F7C5F2 /* GoodsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsCell.swift; sourceTree = "<group>"; };
@@ -193,6 +197,7 @@
 			children = (
 				47AFB9C12864510F005501FA /* Entity */,
 				47AFB9D2286495FA005501FA /* AblyHomeDataUseCase.swift */,
+				47794307286877E500872C54 /* FavoriteUseCase.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -226,6 +231,7 @@
 				4799115428658A6D00F7C5F2 /* GoodsCell.swift */,
 				479911592865F7B200F7C5F2 /* CellReusable.swift */,
 				4799115B286701C800F7C5F2 /* HomeViewModel.swift */,
+				477943052868776F00872C54 /* FavoriteViewModel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -329,6 +335,7 @@
 				47991153286586C300F7C5F2 /* BannerCell.swift in Sources */,
 				47AFB9C928645874005501FA /* HTTPNetworkError.swift in Sources */,
 				47AFB9B02862FC4E005501FA /* AblyHomeDTO.swift in Sources */,
+				477943062868776F00872C54 /* FavoriteViewModel.swift in Sources */,
 				4799115C286701C800F7C5F2 /* HomeViewModel.swift in Sources */,
 				47AFB9C328645123005501FA /* AblyHomeData.swift in Sources */,
 				477943042868620400872C54 /* RealmRepository.swift in Sources */,
@@ -342,6 +349,7 @@
 				47A3EF752862D7B70026C400 /* HomeViewController.swift in Sources */,
 				47AFB9B62862FDC0005501FA /* AblyGoodsDTO.swift in Sources */,
 				479911512864BB3200F7C5F2 /* Design.swift in Sources */,
+				47794308286877E500872C54 /* FavoriteUseCase.swift in Sources */,
 				47AFB9BF28634BBE005501FA /* JSONParser.swift in Sources */,
 				47A3EF712862D7B70026C400 /* AppDelegate.swift in Sources */,
 				47AFB9C52864519B005501FA /* AblyBanner.swift in Sources */,
