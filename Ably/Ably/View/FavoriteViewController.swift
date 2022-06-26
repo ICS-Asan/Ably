@@ -11,6 +11,7 @@ class FavoriteViewController: UIViewController {
     private var dataSource: UICollectionViewDiffableDataSource<Section, AblyGoods>?
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = Design.Text.favoritViewTitle
     }
 }
 
@@ -21,6 +22,7 @@ extension FavoriteViewController {
             collectionViewLayout: createCollectionViewLayout()
         )
         registerCollectionViewCell()
+        setupCollectionViewDataSource()
     }
     
     func createCollectionViewLayout() -> UICollectionViewLayout {
@@ -45,5 +47,24 @@ extension FavoriteViewController {
     
     private func registerCollectionViewCell() {
         favoriteCollectionView.register(GoodsCell.self)
+    }
+    
+    private func setupCollectionViewDataSource() {
+        dataSource = UICollectionViewDiffableDataSource<Section, AblyGoods>(collectionView: favoriteCollectionView) { collectionView, indexPath, item in
+            guard let cell = collectionView.dequeueReusableCell(GoodsCell.self, for: indexPath) else {
+                return UICollectionViewCell()
+            }
+            cell.setupCell(with: item)
+            return cell
+        }
+        favoriteCollectionView.dataSource = dataSource
+    }
+    
+    private func populate(goods: [AblyGoods]?) {
+        guard let goods = goods else { return }
+        var snapshot = NSDiffableDataSourceSnapshot<Section, AblyGoods>()
+        snapshot.appendSections([.favorite])
+        snapshot.appendItems(goods, toSection: .favorite)
+        dataSource?.apply(snapshot)
     }
 }
