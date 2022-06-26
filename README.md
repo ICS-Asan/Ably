@@ -28,7 +28,7 @@
 - RealmSwift
     - 데이터를 로컬에 저장하고 불러와서 사용하기 위해 적용
     - 좋아요 누른 상품을 저장하고 앱을 껐다 키더라도 좋아요 한 목록을 받을 수 있도록 하기 위해 사용
-- MVVM+C
+- MVVM+CleanArchitecture
     - MVVM + CleanArchitecture를 적용하여 설계 및 파일 분리
     - 파일트리
         - ![](https://i.imgur.com/sUm5BTf.png)
