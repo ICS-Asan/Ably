@@ -108,9 +108,78 @@
 			children = (
 				477942FF28685A5C00872C54 /* AblyGoodsRealmDTO.swift */,
 				4779430128685D2100872C54 /* RealmManager.swift */,
-				477943032868620400872C54 /* RealmRepository.swift */,
 			);
 			path = Realm;
+			sourceTree = "<group>";
+		};
+		4779430B28687EDF00872C54 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				47AFB9BE28634BBE005501FA /* JSONParser.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		4779430D28687F5C00872C54 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4779430928687CFD00872C54 /* Int+extension.swift */,
+				47AFB9B82862FE53005501FA /* URLRequest+extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4779430E28687F9700872C54 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				47AFB9CA286480A2005501FA /* AblyHomeDataRepository.swift */,
+				477943032868620400872C54 /* RealmRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		4779430F28687FDE00872C54 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				47AFB9D2286495FA005501FA /* AblyHomeDataUseCase.swift */,
+				47794307286877E500872C54 /* FavoriteUseCase.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		477943102868802400872C54 /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				4799115B286701C800F7C5F2 /* HomeViewModel.swift */,
+				47A3EF742862D7B70026C400 /* HomeViewController.swift */,
+			);
+			path = HomeView;
+			sourceTree = "<group>";
+		};
+		477943112868803100872C54 /* FavoriteView */ = {
+			isa = PBXGroup;
+			children = (
+				477943052868776F00872C54 /* FavoriteViewModel.swift */,
+				4799115D2868362A00F7C5F2 /* FavoriteViewController.swift */,
+			);
+			path = FavoriteView;
+			sourceTree = "<group>";
+		};
+		477943122868804E00872C54 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				479911592865F7B200F7C5F2 /* CellReusable.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		477943132868806200872C54 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				47991152286586C300F7C5F2 /* BannerCell.swift */,
+				4799115428658A6D00F7C5F2 /* GoodsCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		47A3EF642862D7B70026C400 = {
@@ -135,6 +204,7 @@
 				47AFB9D42864AE2B005501FA /* View */,
 				47AFB9C028645102005501FA /* Domain */,
 				47AFB9B12862FD7B005501FA /* Data */,
+				4779430D28687F5C00872C54 /* Extensions */,
 				47A3EF932862DFB90026C400 /* Application */,
 				47A3EF7B2862D7BA0026C400 /* LaunchScreen.storyboard */,
 				47A3EF942862DFF10026C400 /* Resources */,
@@ -163,11 +233,10 @@
 		47AFB9B12862FD7B005501FA /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				4779430E28687F9700872C54 /* Repository */,
+				47AFB9B72862FE28005501FA /* Network */,
 				477942FE28685A2A00872C54 /* Realm */,
 				47AFB9CF28648FCF005501FA /* Protocol */,
-				47AFB9B72862FE28005501FA /* Network */,
-				47AFB9B22862FD84005501FA /* NetworkDTO */,
-				47AFB9CA286480A2005501FA /* AblyHomeDataRepository.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -185,11 +254,11 @@
 		47AFB9B72862FE28005501FA /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				47AFB9B82862FE53005501FA /* URLRequest+extension.swift */,
-				47AFB9BA2862FF56005501FA /* EndPoint.swift */,
 				47AFB9BC28634784005501FA /* HTTPNetwork.swift */,
-				47AFB9BE28634BBE005501FA /* JSONParser.swift */,
+				47AFB9BA2862FF56005501FA /* EndPoint.swift */,
 				47AFB9C828645874005501FA /* HTTPNetworkError.swift */,
+				47AFB9B22862FD84005501FA /* NetworkDTO */,
+				4779430B28687EDF00872C54 /* Utility */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -197,9 +266,8 @@
 		47AFB9C028645102005501FA /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				4779430F28687FDE00872C54 /* UseCase */,
 				47AFB9C12864510F005501FA /* Entity */,
-				47AFB9D2286495FA005501FA /* AblyHomeDataUseCase.swift */,
-				47794307286877E500872C54 /* FavoriteUseCase.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -225,16 +293,12 @@
 		47AFB9D42864AE2B005501FA /* View */ = {
 			isa = PBXGroup;
 			children = (
-				47AFB9D82864BAC1005501FA /* Utility */,
 				47AFB9D52864AE54005501FA /* AblyTabBarController.swift */,
-				47A3EF742862D7B70026C400 /* HomeViewController.swift */,
-				4799115D2868362A00F7C5F2 /* FavoriteViewController.swift */,
-				47991152286586C300F7C5F2 /* BannerCell.swift */,
-				4799115428658A6D00F7C5F2 /* GoodsCell.swift */,
-				479911592865F7B200F7C5F2 /* CellReusable.swift */,
-				4799115B286701C800F7C5F2 /* HomeViewModel.swift */,
-				477943052868776F00872C54 /* FavoriteViewModel.swift */,
-				4779430928687CFD00872C54 /* Int+extension.swift */,
+				477943102868802400872C54 /* HomeView */,
+				477943112868803100872C54 /* FavoriteView */,
+				477943132868806200872C54 /* Cells */,
+				477943122868804E00872C54 /* Protocol */,
+				47AFB9D82864BAC1005501FA /* Utility */,
 			);
 			path = View;
 			sourceTree = "<group>";
