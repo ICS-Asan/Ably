@@ -13,6 +13,7 @@
 		479911582865B69200F7C5F2 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 479911572865B69200F7C5F2 /* SDWebImage */; };
 		4799115A2865F7B200F7C5F2 /* CellReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479911592865F7B200F7C5F2 /* CellReusable.swift */; };
 		4799115C286701C800F7C5F2 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4799115B286701C800F7C5F2 /* HomeViewModel.swift */; };
+		4799115E2868362A00F7C5F2 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4799115D2868362A00F7C5F2 /* FavoriteViewController.swift */; };
 		47A3EF712862D7B70026C400 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A3EF702862D7B70026C400 /* AppDelegate.swift */; };
 		47A3EF732862D7B70026C400 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A3EF722862D7B70026C400 /* SceneDelegate.swift */; };
 		47A3EF752862D7B70026C400 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A3EF742862D7B70026C400 /* HomeViewController.swift */; };
@@ -45,6 +46,7 @@
 		4799115428658A6D00F7C5F2 /* GoodsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsCell.swift; sourceTree = "<group>"; };
 		479911592865F7B200F7C5F2 /* CellReusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellReusable.swift; sourceTree = "<group>"; };
 		4799115B286701C800F7C5F2 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		4799115D2868362A00F7C5F2 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		47A3EF6D2862D7B70026C400 /* Ably.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ably.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47A3EF702862D7B70026C400 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		47A3EF722862D7B70026C400 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 				47AFB9D82864BAC1005501FA /* Utility */,
 				47AFB9D52864AE54005501FA /* AblyTabBarController.swift */,
 				47A3EF742862D7B70026C400 /* HomeViewController.swift */,
+				4799115D2868362A00F7C5F2 /* FavoriteViewController.swift */,
 				47991152286586C300F7C5F2 /* BannerCell.swift */,
 				4799115428658A6D00F7C5F2 /* GoodsCell.swift */,
 				479911592865F7B200F7C5F2 /* CellReusable.swift */,
@@ -318,6 +321,7 @@
 				47A3EF732862D7B70026C400 /* SceneDelegate.swift in Sources */,
 				47AFB9C7286451A9005501FA /* AblyGoods.swift in Sources */,
 				47AFB9B42862FD9A005501FA /* AblyBannerDTO.swift in Sources */,
+				4799115E2868362A00F7C5F2 /* FavoriteViewController.swift in Sources */,
 				47AFB9D62864AE54005501FA /* AblyTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
