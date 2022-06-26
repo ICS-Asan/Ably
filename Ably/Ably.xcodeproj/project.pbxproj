@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		477942FB2868573000872C54 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 477942FA2868573000872C54 /* Realm */; };
 		477942FD2868573000872C54 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 477942FC2868573000872C54 /* RealmSwift */; };
+		4779430028685A5C00872C54 /* AblyGoodsRealmDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477942FF28685A5C00872C54 /* AblyGoodsRealmDTO.swift */; };
 		479911512864BB3200F7C5F2 /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479911502864BB3200F7C5F2 /* Design.swift */; };
 		47991153286586C300F7C5F2 /* BannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47991152286586C300F7C5F2 /* BannerCell.swift */; };
 		4799115528658A6D00F7C5F2 /* GoodsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4799115428658A6D00F7C5F2 /* GoodsCell.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		477942FF28685A5C00872C54 /* AblyGoodsRealmDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AblyGoodsRealmDTO.swift; sourceTree = "<group>"; };
 		479911502864BB3200F7C5F2 /* Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Design.swift; sourceTree = "<group>"; };
 		47991152286586C300F7C5F2 /* BannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCell.swift; sourceTree = "<group>"; };
 		4799115428658A6D00F7C5F2 /* GoodsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsCell.swift; sourceTree = "<group>"; };
@@ -91,6 +93,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		477942FE28685A2A00872C54 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				477942FF28685A5C00872C54 /* AblyGoodsRealmDTO.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
 		47A3EF642862D7B70026C400 = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +151,7 @@
 		47AFB9B12862FD7B005501FA /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				477942FE28685A2A00872C54 /* Realm */,
 				47AFB9CF28648FCF005501FA /* Protocol */,
 				47AFB9B72862FE28005501FA /* Network */,
 				47AFB9B22862FD84005501FA /* NetworkDTO */,
@@ -307,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4799115A2865F7B200F7C5F2 /* CellReusable.swift in Sources */,
+				4779430028685A5C00872C54 /* AblyGoodsRealmDTO.swift in Sources */,
 				47AFB9BD28634784005501FA /* HTTPNetwork.swift in Sources */,
 				47991153286586C300F7C5F2 /* BannerCell.swift in Sources */,
 				47AFB9C928645874005501FA /* HTTPNetworkError.swift in Sources */,
