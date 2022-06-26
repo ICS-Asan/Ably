@@ -41,7 +41,7 @@ class RealmManager {
     }
     
     func delete(ablyGoods: AblyGoods) {
-        let goodsForDelete = realm.objects(AblyGoodsRealmDTO.self).filter("id == %@", ablyGoods)
+        let goodsForDelete = realm.objects(AblyGoodsRealmDTO.self).filter("id == %@", ablyGoods.id)
         
         try! self.realm.write{
             self.realm.delete(goodsForDelete)

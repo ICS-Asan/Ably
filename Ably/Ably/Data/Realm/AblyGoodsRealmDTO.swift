@@ -2,21 +2,21 @@ import Foundation
 import RealmSwift
 
 final class AblyGoodsRealmDTO: Object {
-    @objc dynamic var id: Int
-    @objc dynamic var price: Int
-    @objc dynamic var actualPrice: Int
-    @objc dynamic var sellCount: Int
-    @objc dynamic var discountRate: Int
-    @objc dynamic var name: String
-    @objc dynamic var image: String
-    @objc dynamic var isNew: Bool
-    @objc dynamic var isFavorite: Bool
+    @objc dynamic var id: Int = 0
+    @objc dynamic var price: Int = 0
+    @objc dynamic var actualPrice: Int = 0
+    @objc dynamic var sellCount: Int = 0
+    @objc dynamic var discountRate: Int = 0
+    @objc dynamic var name: String = ""
+    @objc dynamic var image: String = ""
+    @objc dynamic var isNew: Bool = false
+    @objc dynamic var isFavorite: Bool = false
     
     override class func primaryKey() -> String? {
         return "id"
     }
     
-    init(
+    convenience init(
         id: Int,
         price: Int,
         actualPrice: Int,
@@ -26,8 +26,8 @@ final class AblyGoodsRealmDTO: Object {
         image: String,
         isNew: Bool,
         isFavorite: Bool
-    )
-    {
+    ) {
+        self.init()
         self.id = id
         self.price = price
         self.actualPrice = actualPrice
