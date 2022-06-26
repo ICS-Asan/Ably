@@ -59,7 +59,14 @@ class HomeViewModel {
     }
     
     func toggleFavoriteState(at index: Int) {
-        self.goods[index].isFavorite.toggle()
+        let currentFavoriteState = self.goods[index].isFavorite
+        if currentFavoriteState == true {
+            self.goods[index].isFavorite = false
+            homeDataUseCase.deleteFromRealm(ablyGoods: self.goods[index])
+        } else {
+            self.goods[index].isFavorite = true
+            homeDataUseCase.appendToRealm(ablyGoods: self.goods[index])
+        }
     }
 }
 
