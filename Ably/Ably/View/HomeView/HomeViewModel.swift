@@ -1,14 +1,7 @@
 import Foundation
 import RxSwift
 
-protocol ViewModelDescribing {
-    associatedtype Input
-    associatedtype Output
-    
-    func transform(_ input: Input) -> Output
-}
-
-class HomeViewModel {
+final class HomeViewModel {
     private let homeDataUseCase = AblyHomeDataUseCase()
     private let disposeBag: DisposeBag = .init()
     private var homeData = AblyHomeData(banners: [], goods: [])

@@ -1,7 +1,7 @@
 import UIKit
 import SnapKit
 
-class BannerCell: UICollectionViewCell {
+final class BannerCell: UICollectionViewCell {
     
     private let bannerImage: UIImageView = {
         let imageView = UIImageView(frame: .zero)
