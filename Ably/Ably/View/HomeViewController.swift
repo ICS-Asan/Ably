@@ -144,7 +144,6 @@ extension HomeViewController {
     
     private func setupCollectionViewDataSource() {
         dataSource = UICollectionViewDiffableDataSource<Section, AblyHomeItem>(collectionView: collectionView) { collectionView, indexPath, item in
-            print(indexPath.row)
             if indexPath.row == self.viewModel.goods.count - 1 {
                 self.fetchAblyGoodsForPagination()
             }
