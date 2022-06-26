@@ -183,7 +183,7 @@ extension HomeViewController {
                 cell.changeFavoriteState = {
                     self.didTabFavoriteButton.onNext(indexPath.row)
                 }
-                cell.setupCell(with: goods)
+                cell.setupCell(with: goods, isFavoriteView: false)
                 return cell
             }
         }

@@ -85,7 +85,7 @@ extension FavoriteViewController {
             guard let cell = collectionView.dequeueReusableCell(GoodsCell.self, for: indexPath) else {
                 return UICollectionViewCell()
             }
-            cell.setupCell(with: item)
+            cell.setupCell(with: item, isFavoriteView: true)
             return cell
         }
         favoriteCollectionView.dataSource = dataSource

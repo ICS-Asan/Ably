@@ -122,7 +122,8 @@ final class GoodsCell: UICollectionViewCell {
         commonInit()
     }
     
-    func setupCell(with goods: AblyGoods) {
+    func setupCell(with goods: AblyGoods, isFavoriteView: Bool) {
+        hideFavoriteButton(state: isFavoriteView)
         configureGoodsImageView(with: goods.image)
         configureSellCountLable(with: goods.sellCount)
         configureDiscountPriceRateLable(with: goods.discountPriceRate)
@@ -139,6 +140,10 @@ final class GoodsCell: UICollectionViewCell {
         setupPriceStackView()
         setupGoodsInformationStackView()
         drawUnderLine()
+    }
+    
+    private func hideFavoriteButton(state: Bool) {
+        favoriteButton.isHidden = state
     }
     
     private func configureGoodsImageView(with url: String) {
