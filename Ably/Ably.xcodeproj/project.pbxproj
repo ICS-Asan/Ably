@@ -7,10 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		479911512864BB3200F7C5F2 /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479911502864BB3200F7C5F2 /* Design.swift */; };
+		47991153286586C300F7C5F2 /* BannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47991152286586C300F7C5F2 /* BannerCell.swift */; };
+		4799115528658A6D00F7C5F2 /* GoodsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4799115428658A6D00F7C5F2 /* GoodsCell.swift */; };
+		479911582865B69200F7C5F2 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 479911572865B69200F7C5F2 /* SDWebImage */; };
+		4799115A2865F7B200F7C5F2 /* CellReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479911592865F7B200F7C5F2 /* CellReusable.swift */; };
+		4799115C286701C800F7C5F2 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4799115B286701C800F7C5F2 /* HomeViewModel.swift */; };
 		47A3EF712862D7B70026C400 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A3EF702862D7B70026C400 /* AppDelegate.swift */; };
 		47A3EF732862D7B70026C400 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A3EF722862D7B70026C400 /* SceneDelegate.swift */; };
-		47A3EF752862D7B70026C400 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A3EF742862D7B70026C400 /* ViewController.swift */; };
-		47A3EF782862D7B70026C400 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47A3EF762862D7B70026C400 /* Main.storyboard */; };
+		47A3EF752862D7B70026C400 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A3EF742862D7B70026C400 /* HomeViewController.swift */; };
 		47A3EF7A2862D7BA0026C400 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47A3EF792862D7BA0026C400 /* Assets.xcassets */; };
 		47A3EF7D2862D7BA0026C400 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47A3EF7B2862D7BA0026C400 /* LaunchScreen.storyboard */; };
 		47A3EF862862D8480026C400 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 47A3EF852862D8480026C400 /* SnapKit */; };
@@ -30,14 +35,20 @@
 		47AFB9C928645874005501FA /* HTTPNetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AFB9C828645874005501FA /* HTTPNetworkError.swift */; };
 		47AFB9CB286480A2005501FA /* AblyHomeDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AFB9CA286480A2005501FA /* AblyHomeDataRepository.swift */; };
 		47AFB9D128648FDF005501FA /* AblyAPIRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AFB9D028648FDF005501FA /* AblyAPIRepository.swift */; };
+		47AFB9D3286495FA005501FA /* AblyHomeDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AFB9D2286495FA005501FA /* AblyHomeDataUseCase.swift */; };
+		47AFB9D62864AE54005501FA /* AblyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AFB9D52864AE54005501FA /* AblyTabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		479911502864BB3200F7C5F2 /* Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Design.swift; sourceTree = "<group>"; };
+		47991152286586C300F7C5F2 /* BannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCell.swift; sourceTree = "<group>"; };
+		4799115428658A6D00F7C5F2 /* GoodsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsCell.swift; sourceTree = "<group>"; };
+		479911592865F7B200F7C5F2 /* CellReusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellReusable.swift; sourceTree = "<group>"; };
+		4799115B286701C800F7C5F2 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		47A3EF6D2862D7B70026C400 /* Ably.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ably.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47A3EF702862D7B70026C400 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		47A3EF722862D7B70026C400 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		47A3EF742862D7B70026C400 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		47A3EF772862D7B70026C400 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		47A3EF742862D7B70026C400 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		47A3EF792862D7BA0026C400 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		47A3EF7C2862D7BA0026C400 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		47A3EF7E2862D7BA0026C400 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -54,6 +65,8 @@
 		47AFB9C828645874005501FA /* HTTPNetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPNetworkError.swift; sourceTree = "<group>"; };
 		47AFB9CA286480A2005501FA /* AblyHomeDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AblyHomeDataRepository.swift; sourceTree = "<group>"; };
 		47AFB9D028648FDF005501FA /* AblyAPIRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AblyAPIRepository.swift; sourceTree = "<group>"; };
+		47AFB9D2286495FA005501FA /* AblyHomeDataUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AblyHomeDataUseCase.swift; sourceTree = "<group>"; };
+		47AFB9D52864AE54005501FA /* AblyTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AblyTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +78,7 @@
 				47A3EF862862D8480026C400 /* SnapKit in Frameworks */,
 				47A3EF8F2862D86C0026C400 /* RxSwift in Frameworks */,
 				47A3EF8D2862D86C0026C400 /* RxRelay in Frameworks */,
+				479911582865B69200F7C5F2 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,11 +104,10 @@
 		47A3EF6F2862D7B70026C400 /* Ably */ = {
 			isa = PBXGroup;
 			children = (
+				47AFB9D42864AE2B005501FA /* View */,
 				47AFB9C028645102005501FA /* Domain */,
 				47AFB9B12862FD7B005501FA /* Data */,
 				47A3EF932862DFB90026C400 /* Application */,
-				47A3EF742862D7B70026C400 /* ViewController.swift */,
-				47A3EF762862D7B70026C400 /* Main.storyboard */,
 				47A3EF7B2862D7BA0026C400 /* LaunchScreen.storyboard */,
 				47A3EF942862DFF10026C400 /* Resources */,
 			);
@@ -156,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				47AFB9C12864510F005501FA /* Entity */,
+				47AFB9D2286495FA005501FA /* AblyHomeDataUseCase.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -176,6 +190,28 @@
 				47AFB9D028648FDF005501FA /* AblyAPIRepository.swift */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		47AFB9D42864AE2B005501FA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				47AFB9D82864BAC1005501FA /* Utility */,
+				47AFB9D52864AE54005501FA /* AblyTabBarController.swift */,
+				47A3EF742862D7B70026C400 /* HomeViewController.swift */,
+				47991152286586C300F7C5F2 /* BannerCell.swift */,
+				4799115428658A6D00F7C5F2 /* GoodsCell.swift */,
+				479911592865F7B200F7C5F2 /* CellReusable.swift */,
+				4799115B286701C800F7C5F2 /* HomeViewModel.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		47AFB9D82864BAC1005501FA /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				479911502864BB3200F7C5F2 /* Design.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,6 +235,7 @@
 				47A3EF8A2862D86C0026C400 /* RxCocoa */,
 				47A3EF8C2862D86C0026C400 /* RxRelay */,
 				47A3EF8E2862D86C0026C400 /* RxSwift */,
+				479911572865B69200F7C5F2 /* SDWebImage */,
 			);
 			productName = Ably;
 			productReference = 47A3EF6D2862D7B70026C400 /* Ably.app */;
@@ -231,6 +268,7 @@
 			packageReferences = (
 				47A3EF842862D8480026C400 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				47A3EF872862D86C0026C400 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				479911562865B69200F7C5F2 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = 47A3EF6E2862D7B70026C400 /* Products */;
 			projectDirPath = "";
@@ -248,7 +286,6 @@
 			files = (
 				47A3EF7D2862D7BA0026C400 /* LaunchScreen.storyboard in Resources */,
 				47A3EF7A2862D7BA0026C400 /* Assets.xcassets in Resources */,
-				47A3EF782862D7B70026C400 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,36 +296,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4799115A2865F7B200F7C5F2 /* CellReusable.swift in Sources */,
 				47AFB9BD28634784005501FA /* HTTPNetwork.swift in Sources */,
+				47991153286586C300F7C5F2 /* BannerCell.swift in Sources */,
 				47AFB9C928645874005501FA /* HTTPNetworkError.swift in Sources */,
 				47AFB9B02862FC4E005501FA /* AblyHomeDTO.swift in Sources */,
+				4799115C286701C800F7C5F2 /* HomeViewModel.swift in Sources */,
 				47AFB9C328645123005501FA /* AblyHomeData.swift in Sources */,
 				47AFB9D128648FDF005501FA /* AblyAPIRepository.swift in Sources */,
+				47AFB9D3286495FA005501FA /* AblyHomeDataUseCase.swift in Sources */,
 				47AFB9B92862FE53005501FA /* URLRequest+extension.swift in Sources */,
+				4799115528658A6D00F7C5F2 /* GoodsCell.swift in Sources */,
 				47AFB9CB286480A2005501FA /* AblyHomeDataRepository.swift in Sources */,
 				47AFB9BB2862FF56005501FA /* EndPoint.swift in Sources */,
-				47A3EF752862D7B70026C400 /* ViewController.swift in Sources */,
+				47A3EF752862D7B70026C400 /* HomeViewController.swift in Sources */,
 				47AFB9B62862FDC0005501FA /* AblyGoodsDTO.swift in Sources */,
+				479911512864BB3200F7C5F2 /* Design.swift in Sources */,
 				47AFB9BF28634BBE005501FA /* JSONParser.swift in Sources */,
 				47A3EF712862D7B70026C400 /* AppDelegate.swift in Sources */,
 				47AFB9C52864519B005501FA /* AblyBanner.swift in Sources */,
 				47A3EF732862D7B70026C400 /* SceneDelegate.swift in Sources */,
 				47AFB9C7286451A9005501FA /* AblyGoods.swift in Sources */,
 				47AFB9B42862FD9A005501FA /* AblyBannerDTO.swift in Sources */,
+				47AFB9D62864AE54005501FA /* AblyTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		47A3EF762862D7B70026C400 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				47A3EF772862D7B70026C400 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		47A3EF7B2862D7BA0026C400 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -428,7 +464,6 @@
 				INFOPLIST_FILE = Ably/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -456,7 +491,6 @@
 				INFOPLIST_FILE = Ably/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -496,6 +530,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		479911562865B69200F7C5F2 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 5.9.0;
+			};
+		};
 		47A3EF842862D8480026C400 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -515,6 +557,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		479911572865B69200F7C5F2 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 479911562865B69200F7C5F2 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
 		47A3EF852862D8480026C400 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 47A3EF842862D8480026C400 /* XCRemoteSwiftPackageReference "SnapKit" */;

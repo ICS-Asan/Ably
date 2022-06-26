@@ -1,6 +1,6 @@
 import Foundation
 
-struct AblyGoods {
+struct AblyGoods: Hashable {
     let id: Int
     let name: String
     let image: String
@@ -8,4 +8,12 @@ struct AblyGoods {
     let sellCount: Int
     let actualPrice: Int
     let price: Int
+    var isFavorite: Bool = false
+    
+    var discountPriceRate: Int {
+        let decimalActualPrice = Decimal(actualPrice)
+        let decimalDiscountPrice = decimalActualPrice - Decimal(price)
+        let discountRate = Double(truncating: decimalDiscountPrice/decimalActualPrice as NSNumber)
+        return Int(discountRate * 100)
+    }
 }
