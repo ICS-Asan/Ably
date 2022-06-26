@@ -98,6 +98,7 @@ class GoodsCell: UICollectionViewCell {
         stackView.alignment = .center
         stackView.spacing = 5
         stackView.setContentHuggingPriority(.defaultHigh, for: .vertical)
+        
         return stackView
     }()
     
@@ -125,18 +126,35 @@ class GoodsCell: UICollectionViewCell {
         configureGoodsImageView(with: goods.image)
         configureSellCountLable(with: goods.sellCount)
         configureDiscountPriceRateLable(with: goods.discountPriceRate)
-        setupFavoriteButtonImage(favoriteState: goods.isFavorite)
+        configureFavoriteButtonImage(favoriteState: goods.isFavorite)
         newBadgeLabel.isHidden = !goods.isNew
         priceLabel.text = goods.price.addComma()
         goodsNameLabel.text = goods.name
         favoriteButton.addTarget(self, action: #selector(didTabFavoriteButton), for: .touchDown)
     }
     
-    func configureGoodsImageView(with url: String) {
+    private func commonInit() {
+        setupContainerViewLayout()
+        setupGoodsImageViewLayout()
+        setupPriceStackView()
+        setupGoodsInformationStackView()
+        drawUnderLine()
+    }
+    
+    private func configureGoodsImageView(with url: String) {
         goodsImageView.sd_setImage(with: URL(string: url))
     }
     
-    func configureDiscountPriceRateLable(with discountRate: Int) {
+    private func configureSellCountLable(with sellCount: Int) {
+        if sellCount >= 10 {
+            sellCountLabel.isHidden = false
+            sellCountLabel.text = sellCount.addComma() + Design.Text.sellCountLabelSuffix
+        } else {
+            sellCountLabel.isHidden = true
+        }
+    }
+    
+    private func configureDiscountPriceRateLable(with discountRate: Int) {
         if discountRate > 0 {
             discountPriceRateLabel.isHidden = false
             discountPriceRateLabel.text = String(discountRate) + Design.Text.discountRateSign
@@ -146,16 +164,7 @@ class GoodsCell: UICollectionViewCell {
         }
     }
     
-    func configureSellCountLable(with sellCount: Int) {
-        if sellCount >= 10 {
-            sellCountLabel.isHidden = false
-            sellCountLabel.text = sellCount.addComma() + Design.Text.sellCountLabelSuffix
-        } else {
-            sellCountLabel.isHidden = true
-        }
-    }
-    
-    private func setupFavoriteButtonImage(favoriteState: Bool) {
+    private func configureFavoriteButtonImage(favoriteState: Bool) {
         if favoriteState {
             favoriteButton.setImage(Design.Image.selectedFavorite, for: .normal)
             favoriteButton.tintColor = Design.Color.main
@@ -163,14 +172,6 @@ class GoodsCell: UICollectionViewCell {
             favoriteButton.setImage(Design.Image.normalFavorite, for: .normal)
             favoriteButton.tintColor = .white
         }
-    }
-    
-    private func commonInit() {
-        setupContainerViewLayout()
-        setupGoodsImageViewLayout()
-        setupPriceStackView()
-        setupGoodsInformationStackView()
-        drawUnderLine()
     }
     
     private func setupContainerViewLayout() {
@@ -235,12 +236,7 @@ class GoodsCell: UICollectionViewCell {
         }
     }
     
-    @objc private func didTabFavoriteButton() {
-        changeFavoriteState?()
-        setupFavoriteButtonImage(favoriteState: !isFavorite)
-    }
-    
-    func drawUnderLine() {
+    private func drawUnderLine() {
         let underLine = CALayer()
         underLine.frame = CGRect(
             x: 0,
@@ -250,6 +246,11 @@ class GoodsCell: UICollectionViewCell {
         )
         underLine.backgroundColor = UIColor.secondarySystemBackground.cgColor
         layer.addSublayer(underLine)
+    }
+    
+    @objc private func didTabFavoriteButton() {
+        changeFavoriteState?()
+        configureFavoriteButtonImage(favoriteState: !isFavorite)
     }
 }
 
