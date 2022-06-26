@@ -27,7 +27,8 @@ class HomeViewController: UIViewController {
     private var dataSource: UICollectionViewDiffableDataSource<Section, AblyHomeItem>?
     private var refreshControl = UIRefreshControl()
     private let viewModel = HomeViewModel()
-    private let loadFinishedObserver: PublishSubject<AblyHomeData> = .init()
+    private let loadViewObserver: PublishSubject<[AblyGoods]> = .init()
+    private let loadDataObserver: PublishSubject<AblyHomeData> = .init()
     private let refreshObserver: PublishSubject<AblyHomeData> = .init()
     private let didTabFavoriteButton: PublishSubject<Int> = .init()
     private let disposeBag: DisposeBag = .init()
@@ -40,6 +41,15 @@ class HomeViewController: UIViewController {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         bind()
+    }
+    
+    override func loadView() {
+        super.loadView()
+        viewModel.fetchRealmData()
+            .subscribe(onNext: { [weak self] data in
+                self?.loadViewObserver.onNext(data)
+            })
+            .disposed(by: disposeBag)
     }
     
     override func viewDidLoad() {
@@ -56,8 +66,8 @@ class HomeViewController: UIViewController {
         viewModel.fetchAblyHomeData()
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { [weak self] data in
-                self?.populate(banners: data.banners ?? [], goods: data.goods)
-                self?.loadFinishedObserver.onNext(data)
+                self?.loadDataObserver.onNext(data)
+                self?.populate(banners: self?.viewModel.banners, goods: self?.viewModel.goods)
             })
             .disposed(by: disposeBag)
         collectionView.refreshControl = refreshControl
@@ -77,7 +87,8 @@ class HomeViewController: UIViewController {
     
     private func bind() {
         let input = HomeViewModel.Input(
-            loadFinishedObserver: loadFinishedObserver,
+            loadViewObserver: loadViewObserver,
+            loadFinishedObserver: loadDataObserver,
             refreshObserver: refreshObserver,
             didTabFavoriteButton: didTabFavoriteButton
         )
@@ -162,7 +173,7 @@ extension HomeViewController {
         self.viewModel.fetchAblyGoodsForPagination()
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { [weak self] data in
-                self?.loadFinishedObserver.onNext(data)
+                self?.loadDataObserver.onNext(data)
                 self?.populate(banners: self?.viewModel.banners, goods: self?.viewModel.goods)
             })
             .disposed(by: self.disposeBag)
