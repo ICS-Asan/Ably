@@ -24,6 +24,7 @@
 		4799115C286701C800F7C5F2 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4799115B286701C800F7C5F2 /* HomeViewModel.swift */; };
 		4799115E2868362A00F7C5F2 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4799115D2868362A00F7C5F2 /* FavoriteViewController.swift */; };
 		479CD18428688E2900ABD0AB /* UIFont+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479CD18328688E2900ABD0AB /* UIFont+extension.swift */; };
+		479CD1862868925900ABD0AB /* ViewModelDescribing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479CD1852868925900ABD0AB /* ViewModelDescribing.swift */; };
 		47A3EF712862D7B70026C400 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A3EF702862D7B70026C400 /* AppDelegate.swift */; };
 		47A3EF732862D7B70026C400 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A3EF722862D7B70026C400 /* SceneDelegate.swift */; };
 		47A3EF752862D7B70026C400 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A3EF742862D7B70026C400 /* HomeViewController.swift */; };
@@ -65,6 +66,7 @@
 		4799115B286701C800F7C5F2 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		4799115D2868362A00F7C5F2 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		479CD18328688E2900ABD0AB /* UIFont+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+extension.swift"; sourceTree = "<group>"; };
+		479CD1852868925900ABD0AB /* ViewModelDescribing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelDescribing.swift; sourceTree = "<group>"; };
 		47A3EF6D2862D7B70026C400 /* Ably.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ably.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47A3EF702862D7B70026C400 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		47A3EF722862D7B70026C400 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				479911592865F7B200F7C5F2 /* CellReusable.swift */,
+				479CD1852868925900ABD0AB /* ViewModelDescribing.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -426,6 +429,7 @@
 				479911512864BB3200F7C5F2 /* Design.swift in Sources */,
 				47794308286877E500872C54 /* FavoriteUseCase.swift in Sources */,
 				47AFB9BF28634BBE005501FA /* JSONParser.swift in Sources */,
+				479CD1862868925900ABD0AB /* ViewModelDescribing.swift in Sources */,
 				47A3EF712862D7B70026C400 /* AppDelegate.swift in Sources */,
 				47AFB9C52864519B005501FA /* AblyBanner.swift in Sources */,
 				47A3EF732862D7B70026C400 /* SceneDelegate.swift in Sources */,
