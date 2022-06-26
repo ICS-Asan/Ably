@@ -1,10 +1,10 @@
 import Foundation
 import RxSwift
 
-class AblyHomeDataRepository: AblyAPIRepository {
+final class AblyNetworkRepository: NetworkRepository {
     
     func fetchAblyHomeData() -> Observable<AblyHomeData> {
-        let ablyHomeData = HTTPNetwork.shared.fetch(with: EndPoint.home.url)
+        let ablyHomeData = HTTPNetworkManager.shared.fetch(with: EndPoint.home.url)
             .map { data -> AblyHomeData in
                 let decodedData = JSONParser.decodeData(of: data, type: AblyHomeDTO.self)
                 
@@ -15,7 +15,7 @@ class AblyHomeDataRepository: AblyAPIRepository {
     }
 
     func fetchAblyGoodsForPaging(with lastId: Int) -> Observable<AblyHomeData> {
-        let ablyHomeData = HTTPNetwork.shared.fetch(with: EndPoint.paging(lastId: lastId).url)
+        let ablyHomeData = HTTPNetworkManager.shared.fetch(with: EndPoint.paging(lastId: lastId).url)
             .map { data -> AblyHomeData in
                 let decodedData = JSONParser.decodeData(of: data, type: AblyHomeDTO.self)
                 

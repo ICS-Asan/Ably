@@ -2,7 +2,7 @@ import UIKit
 
 final class AblyTabBarController: UITabBarController {
     let homeNavigationController = UINavigationController(rootViewController: HomeViewController())
-    let favoritNavigationController = UIViewController()
+    let favoritNavigationController = UINavigationController(rootViewController: FavoriteViewController())
     
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -25,11 +25,11 @@ final class AblyTabBarController: UITabBarController {
     
     private func setupTabBarItem() {
         homeNavigationController.tabBarItem = UITabBarItem(title: Design.Text.homeViewTitle,
-                                                           image: Design.Image.normalHomeTabBar,
-                                                           selectedImage: Design.Image.selectedHomeTabBar)
+                                                           image: Design.Image.normalHome,
+                                                           selectedImage: Design.Image.selectedHome)
         favoritNavigationController.tabBarItem = UITabBarItem(title: Design.Text.favoritViewTitle,
-                                                              image: Design.Image.normalFavoritTabBar,
-                                                              selectedImage: Design.Image.selectedFavoritTabBar)
+                                                              image: Design.Image.normalFavorite,
+                                                              selectedImage: Design.Image.selectedFavorite)
         tabBar.tintColor = Design.Color.main
         tabBar.unselectedItemTintColor = .systemGray
     }

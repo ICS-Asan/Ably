@@ -2,7 +2,7 @@ import UIKit
 import SnapKit
 import SDWebImage
 
-class GoodsCell: UICollectionViewCell {
+final class GoodsCell: UICollectionViewCell {
     var changeFavoriteState: (() -> Void)?
     private var isFavorite: Bool {
         return favoriteButton.tintColor == Design.Color.main
@@ -25,7 +25,7 @@ class GoodsCell: UICollectionViewCell {
     
     private let favoriteButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(systemName: "heart"), for: .normal)
+        button.setImage(Design.Image.normalFavorite, for: .normal)
         button.tintColor = .white
         button.layer.shadowColor = UIColor.systemGray.cgColor
         button.layer.shadowOpacity = 0.8
@@ -81,7 +81,7 @@ class GoodsCell: UICollectionViewCell {
     
     private let newBadgeLabel: UILabel = {
         let label = UILabel()
-        label.text = "NEW"
+        label.text = Design.Text.newBadgeTitle
         label.font = .preferredFont(forTextStyle: .caption2).bold
         label.textColor = Design.Color.secondaryText
         label.textAlignment = .center
@@ -98,6 +98,7 @@ class GoodsCell: UICollectionViewCell {
         stackView.alignment = .center
         stackView.spacing = 5
         stackView.setContentHuggingPriority(.defaultHigh, for: .vertical)
+        
         return stackView
     }()
     
@@ -121,48 +122,16 @@ class GoodsCell: UICollectionViewCell {
         commonInit()
     }
     
-    func setupCell(with goods: AblyGoods) {
+    func setupCell(with goods: AblyGoods, isFavoriteView: Bool) {
+        hideFavoriteButton(state: isFavoriteView)
         configureGoodsImageView(with: goods.image)
         configureSellCountLable(with: goods.sellCount)
         configureDiscountPriceRateLable(with: goods.discountPriceRate)
-        configureFavoriteButton(favoriteState: goods.isFavorite)
+        configureFavoriteButtonImage(favoriteState: goods.isFavorite)
         newBadgeLabel.isHidden = !goods.isNew
-        priceLabel.text = String(goods.price)
+        priceLabel.text = goods.price.addComma()
         goodsNameLabel.text = goods.name
         favoriteButton.addTarget(self, action: #selector(didTabFavoriteButton), for: .touchDown)
-    }
-    
-    func configureGoodsImageView(with url: String) {
-        goodsImageView.sd_setImage(with: URL(string: url))
-    }
-    
-    func configureDiscountPriceRateLable(with discountRate: Int) {
-        if discountRate > 0 {
-            discountPriceRateLabel.isHidden = false
-            discountPriceRateLabel.text = String(discountRate) + "%"
-        } else {
-            discountPriceRateLabel.isHidden = true
-            discountPriceRateLabel.text = String()
-        }
-    }
-    
-    func configureSellCountLable(with sellCount: Int) {
-        if sellCount >= 10 {
-            sellCountLabel.isHidden = false
-            sellCountLabel.text = String(sellCount) + "개 구매중"
-        } else {
-            sellCountLabel.isHidden = true
-        }
-    }
-    
-    private func configureFavoriteButton(favoriteState: Bool) {
-        if favoriteState {
-            favoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-            favoriteButton.tintColor = Design.Color.main
-        } else {
-            favoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
-            favoriteButton.tintColor = .white
-        }
     }
     
     private func commonInit() {
@@ -171,6 +140,43 @@ class GoodsCell: UICollectionViewCell {
         setupPriceStackView()
         setupGoodsInformationStackView()
         drawUnderLine()
+    }
+    
+    private func hideFavoriteButton(state: Bool) {
+        favoriteButton.isHidden = state
+    }
+    
+    private func configureGoodsImageView(with url: String) {
+        goodsImageView.sd_setImage(with: URL(string: url))
+    }
+    
+    private func configureSellCountLable(with sellCount: Int) {
+        if sellCount >= 10 {
+            sellCountLabel.isHidden = false
+            sellCountLabel.text = sellCount.addComma() + Design.Text.sellCountLabelSuffix
+        } else {
+            sellCountLabel.isHidden = true
+        }
+    }
+    
+    private func configureDiscountPriceRateLable(with discountRate: Int) {
+        if discountRate > 0 {
+            discountPriceRateLabel.isHidden = false
+            discountPriceRateLabel.text = String(discountRate) + Design.Text.discountRateSign
+        } else {
+            discountPriceRateLabel.isHidden = true
+            discountPriceRateLabel.text = String()
+        }
+    }
+    
+    private func configureFavoriteButtonImage(favoriteState: Bool) {
+        if favoriteState {
+            favoriteButton.setImage(Design.Image.selectedFavorite, for: .normal)
+            favoriteButton.tintColor = Design.Color.main
+        } else {
+            favoriteButton.setImage(Design.Image.normalFavorite, for: .normal)
+            favoriteButton.tintColor = .white
+        }
     }
     
     private func setupContainerViewLayout() {
@@ -235,22 +241,7 @@ class GoodsCell: UICollectionViewCell {
         }
     }
     
-    @objc private func didTabFavoriteButton() {
-        changeFavoriteState?()
-        toggleFavoriteButtonImage()
-    }
-    
-    func toggleFavoriteButtonImage() {
-        if isFavorite {
-            favoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
-            favoriteButton.tintColor = .white
-        } else {
-            favoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-            favoriteButton.tintColor = Design.Color.main
-        }
-    }
-    
-    func drawUnderLine() {
+    private func drawUnderLine() {
         let underLine = CALayer()
         underLine.frame = CGRect(
             x: 0,
@@ -261,18 +252,9 @@ class GoodsCell: UICollectionViewCell {
         underLine.backgroundColor = UIColor.secondarySystemBackground.cgColor
         layer.addSublayer(underLine)
     }
-}
-
-extension UIFont {
-    func withTraits(traits: UIFontDescriptor.SymbolicTraits) -> UIFont {
-        if let descriptor = fontDescriptor.withSymbolicTraits(traits) {
-            return UIFont(descriptor: descriptor, size: 0)
-        }
-        
-        return self
-    }
     
-    var bold: UIFont {
-        return withTraits(traits: .traitBold)
+    @objc private func didTabFavoriteButton() {
+        changeFavoriteState?()
+        configureFavoriteButtonImage(favoriteState: !isFavorite)
     }
 }
