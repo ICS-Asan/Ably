@@ -11,10 +11,11 @@
 		477942FD2868573000872C54 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 477942FC2868573000872C54 /* RealmSwift */; };
 		4779430028685A5C00872C54 /* AblyGoodsRealmDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477942FF28685A5C00872C54 /* AblyGoodsRealmDTO.swift */; };
 		4779430228685D2100872C54 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4779430128685D2100872C54 /* RealmManager.swift */; };
-		477943042868620400872C54 /* RealmRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477943032868620400872C54 /* RealmRepository.swift */; };
+		477943042868620400872C54 /* AblyRealmRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477943032868620400872C54 /* AblyRealmRepository.swift */; };
 		477943062868776F00872C54 /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477943052868776F00872C54 /* FavoriteViewModel.swift */; };
 		47794308286877E500872C54 /* FavoriteUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47794307286877E500872C54 /* FavoriteUseCase.swift */; };
 		4779430A28687CFD00872C54 /* Int+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4779430928687CFD00872C54 /* Int+extension.swift */; };
+		477943152868854300872C54 /* RealmRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477943142868854300872C54 /* RealmRepository.swift */; };
 		479911512864BB3200F7C5F2 /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479911502864BB3200F7C5F2 /* Design.swift */; };
 		47991153286586C300F7C5F2 /* BannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47991152286586C300F7C5F2 /* BannerCell.swift */; };
 		4799115528658A6D00F7C5F2 /* GoodsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4799115428658A6D00F7C5F2 /* GoodsCell.swift */; };
@@ -51,10 +52,11 @@
 /* Begin PBXFileReference section */
 		477942FF28685A5C00872C54 /* AblyGoodsRealmDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AblyGoodsRealmDTO.swift; sourceTree = "<group>"; };
 		4779430128685D2100872C54 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
-		477943032868620400872C54 /* RealmRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmRepository.swift; sourceTree = "<group>"; };
+		477943032868620400872C54 /* AblyRealmRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AblyRealmRepository.swift; sourceTree = "<group>"; };
 		477943052868776F00872C54 /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
 		47794307286877E500872C54 /* FavoriteUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteUseCase.swift; sourceTree = "<group>"; };
 		4779430928687CFD00872C54 /* Int+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+extension.swift"; sourceTree = "<group>"; };
+		477943142868854300872C54 /* RealmRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmRepository.swift; sourceTree = "<group>"; };
 		479911502864BB3200F7C5F2 /* Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Design.swift; sourceTree = "<group>"; };
 		47991152286586C300F7C5F2 /* BannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCell.swift; sourceTree = "<group>"; };
 		4799115428658A6D00F7C5F2 /* GoodsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsCell.swift; sourceTree = "<group>"; };
@@ -133,7 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				47AFB9CA286480A2005501FA /* AblyHomeDataRepository.swift */,
-				477943032868620400872C54 /* RealmRepository.swift */,
+				477943032868620400872C54 /* AblyRealmRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -286,6 +288,7 @@
 			isa = PBXGroup;
 			children = (
 				47AFB9D028648FDF005501FA /* AblyAPIRepository.swift */,
+				477943142868854300872C54 /* RealmRepository.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -405,7 +408,7 @@
 				477943062868776F00872C54 /* FavoriteViewModel.swift in Sources */,
 				4799115C286701C800F7C5F2 /* HomeViewModel.swift in Sources */,
 				47AFB9C328645123005501FA /* AblyHomeData.swift in Sources */,
-				477943042868620400872C54 /* RealmRepository.swift in Sources */,
+				477943042868620400872C54 /* AblyRealmRepository.swift in Sources */,
 				47AFB9D128648FDF005501FA /* AblyAPIRepository.swift in Sources */,
 				47AFB9D3286495FA005501FA /* AblyHomeDataUseCase.swift in Sources */,
 				47AFB9B92862FE53005501FA /* URLRequest+extension.swift in Sources */,
@@ -422,6 +425,7 @@
 				47A3EF712862D7B70026C400 /* AppDelegate.swift in Sources */,
 				47AFB9C52864519B005501FA /* AblyBanner.swift in Sources */,
 				47A3EF732862D7B70026C400 /* SceneDelegate.swift in Sources */,
+				477943152868854300872C54 /* RealmRepository.swift in Sources */,
 				47AFB9C7286451A9005501FA /* AblyGoods.swift in Sources */,
 				47AFB9B42862FD9A005501FA /* AblyBannerDTO.swift in Sources */,
 				4799115E2868362A00F7C5F2 /* FavoriteViewController.swift in Sources */,

@@ -2,7 +2,7 @@ import Foundation
 import RxSwift
 import RealmSwift
 
-class RealmRepository {
+class AblyRealmRepository: RealmRepository {
     
     func fetchRealmData() -> Observable<[AblyGoods]> {
         return RealmManager.shared.fetch()

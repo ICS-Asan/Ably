@@ -4,7 +4,7 @@ import RxSwift
 final class FavoriteUseCase {
     let realmRepository: RealmRepository
     
-    init(realmRepository: RealmRepository = RealmRepository()) {
+    init(realmRepository: RealmRepository = AblyRealmRepository()) {
         self.realmRepository = realmRepository
     }
     

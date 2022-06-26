@@ -7,7 +7,7 @@ class AblyHomeDataUseCase {
     
     init(
         ablyHomeDataRepository: AblyAPIRepository = AblyHomeDataRepository(),
-        realmRepository: RealmRepository = RealmRepository()
+        realmRepository: RealmRepository = AblyRealmRepository()
     ) {
         self.ablyHomeDataRepository = ablyHomeDataRepository
         self.realmRepository = realmRepository
