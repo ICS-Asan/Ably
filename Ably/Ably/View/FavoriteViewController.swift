@@ -23,6 +23,7 @@ extension FavoriteViewController {
         )
         registerCollectionViewCell()
         setupCollectionViewDataSource()
+        setupCollectionViewConstraints()
     }
     
     func createCollectionViewLayout() -> UICollectionViewLayout {
@@ -58,6 +59,13 @@ extension FavoriteViewController {
             return cell
         }
         favoriteCollectionView.dataSource = dataSource
+    }
+    
+    private func setupCollectionViewConstraints() {
+        view.addSubview(favoriteCollectionView)
+        favoriteCollectionView.snp.makeConstraints { make in
+            make.edges.equalTo(view.safeAreaLayoutGuide)
+        }
     }
     
     private func populate(goods: [AblyGoods]?) {
