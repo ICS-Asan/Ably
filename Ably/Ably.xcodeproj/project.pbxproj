@@ -23,6 +23,7 @@
 		4799115A2865F7B200F7C5F2 /* CellReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479911592865F7B200F7C5F2 /* CellReusable.swift */; };
 		4799115C286701C800F7C5F2 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4799115B286701C800F7C5F2 /* HomeViewModel.swift */; };
 		4799115E2868362A00F7C5F2 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4799115D2868362A00F7C5F2 /* FavoriteViewController.swift */; };
+		479CD18428688E2900ABD0AB /* UIFont+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479CD18328688E2900ABD0AB /* UIFont+extension.swift */; };
 		47A3EF712862D7B70026C400 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A3EF702862D7B70026C400 /* AppDelegate.swift */; };
 		47A3EF732862D7B70026C400 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A3EF722862D7B70026C400 /* SceneDelegate.swift */; };
 		47A3EF752862D7B70026C400 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A3EF742862D7B70026C400 /* HomeViewController.swift */; };
@@ -63,6 +64,7 @@
 		479911592865F7B200F7C5F2 /* CellReusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellReusable.swift; sourceTree = "<group>"; };
 		4799115B286701C800F7C5F2 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		4799115D2868362A00F7C5F2 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		479CD18328688E2900ABD0AB /* UIFont+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+extension.swift"; sourceTree = "<group>"; };
 		47A3EF6D2862D7B70026C400 /* Ably.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ably.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47A3EF702862D7B70026C400 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		47A3EF722862D7B70026C400 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 			children = (
 				4779430928687CFD00872C54 /* Int+extension.swift */,
 				47AFB9B82862FE53005501FA /* URLRequest+extension.swift */,
+				479CD18328688E2900ABD0AB /* UIFont+extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 				47AFB9D3286495FA005501FA /* AblyHomeDataUseCase.swift in Sources */,
 				47AFB9B92862FE53005501FA /* URLRequest+extension.swift in Sources */,
 				4799115528658A6D00F7C5F2 /* GoodsCell.swift in Sources */,
+				479CD18428688E2900ABD0AB /* UIFont+extension.swift in Sources */,
 				47AFB9CB286480A2005501FA /* AblyNetworkRepository.swift in Sources */,
 				4779430228685D2100872C54 /* RealmManager.swift in Sources */,
 				47AFB9BB2862FF56005501FA /* EndPoint.swift in Sources */,
