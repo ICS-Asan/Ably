@@ -25,7 +25,7 @@ class GoodsCell: UICollectionViewCell {
     
     private let favoriteButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(systemName: "heart"), for: .normal)
+        button.setImage(Design.Image.normalFavorite, for: .normal)
         button.tintColor = .white
         button.layer.shadowColor = UIColor.systemGray.cgColor
         button.layer.shadowOpacity = 0.8
@@ -81,7 +81,7 @@ class GoodsCell: UICollectionViewCell {
     
     private let newBadgeLabel: UILabel = {
         let label = UILabel()
-        label.text = "NEW"
+        label.text = Design.Text.newBadgeTitle
         label.font = .preferredFont(forTextStyle: .caption2).bold
         label.textColor = Design.Color.secondaryText
         label.textAlignment = .center
@@ -125,7 +125,7 @@ class GoodsCell: UICollectionViewCell {
         configureGoodsImageView(with: goods.image)
         configureSellCountLable(with: goods.sellCount)
         configureDiscountPriceRateLable(with: goods.discountPriceRate)
-        configureFavoriteButton(favoriteState: goods.isFavorite)
+        setupFavoriteButtonImage(favoriteState: goods.isFavorite)
         newBadgeLabel.isHidden = !goods.isNew
         priceLabel.text = goods.price.addComma()
         goodsNameLabel.text = goods.name
@@ -139,7 +139,7 @@ class GoodsCell: UICollectionViewCell {
     func configureDiscountPriceRateLable(with discountRate: Int) {
         if discountRate > 0 {
             discountPriceRateLabel.isHidden = false
-            discountPriceRateLabel.text = String(discountRate) + "%"
+            discountPriceRateLabel.text = String(discountRate) + Design.Text.discountRateSign
         } else {
             discountPriceRateLabel.isHidden = true
             discountPriceRateLabel.text = String()
@@ -149,18 +149,18 @@ class GoodsCell: UICollectionViewCell {
     func configureSellCountLable(with sellCount: Int) {
         if sellCount >= 10 {
             sellCountLabel.isHidden = false
-            sellCountLabel.text = sellCount.addComma() + "개 구매중"
+            sellCountLabel.text = sellCount.addComma() + Design.Text.sellCountLabelSuffix
         } else {
             sellCountLabel.isHidden = true
         }
     }
     
-    private func configureFavoriteButton(favoriteState: Bool) {
+    private func setupFavoriteButtonImage(favoriteState: Bool) {
         if favoriteState {
-            favoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            favoriteButton.setImage(Design.Image.selectedFavorite, for: .normal)
             favoriteButton.tintColor = Design.Color.main
         } else {
-            favoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
+            favoriteButton.setImage(Design.Image.normalFavorite, for: .normal)
             favoriteButton.tintColor = .white
         }
     }
@@ -237,17 +237,7 @@ class GoodsCell: UICollectionViewCell {
     
     @objc private func didTabFavoriteButton() {
         changeFavoriteState?()
-        toggleFavoriteButtonImage()
-    }
-    
-    func toggleFavoriteButtonImage() {
-        if isFavorite {
-            favoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
-            favoriteButton.tintColor = .white
-        } else {
-            favoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-            favoriteButton.tintColor = Design.Color.main
-        }
+        setupFavoriteButtonImage(favoriteState: !isFavorite)
     }
     
     func drawUnderLine() {

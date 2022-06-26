@@ -5,6 +5,9 @@ enum Design {
     enum Text {
         static let homeViewTitle = "홈"
         static let favoritViewTitle = "좋아요"
+        static let newBadgeTitle = "New"
+        static let discountRateSign = "%"
+        static let sellCountLabelSuffix = "개 구매중"
     }
     
     enum Color {
@@ -14,10 +17,10 @@ enum Design {
     }
     
     enum Image {
-        static let normalHomeTabBar = UIImage(systemName: "house")
-        static let selectedHomeTabBar = UIImage(systemName: "house.fill")
-        static let normalFavoritTabBar = UIImage(systemName: "heart")
-        static let selectedFavoritTabBar = UIImage(systemName: "heart.fill")
+        static let normalHome = UIImage(systemName: "house")
+        static let selectedHome = UIImage(systemName: "house.fill")
+        static let normalFavorite = UIImage(systemName: "heart")
+        static let selectedFavorite = UIImage(systemName: "heart.fill")
     }
 
 }
