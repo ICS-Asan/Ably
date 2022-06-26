@@ -1,7 +1,7 @@
 import Foundation
 import RxSwift
 
-class FavoriteViewModel {
+final class FavoriteViewModel {
     private let favoriteUseCase = FavoriteUseCase()
     private let disposeBag: DisposeBag = .init()
 

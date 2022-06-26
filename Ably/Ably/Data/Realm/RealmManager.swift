@@ -2,7 +2,7 @@ import Foundation
 import RxSwift
 import RealmSwift
 
-class RealmManager {
+final class RealmManager {
     static let shared = RealmManager()
     let realm = try! Realm()
     

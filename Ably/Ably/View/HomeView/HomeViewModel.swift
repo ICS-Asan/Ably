@@ -1,7 +1,7 @@
 import Foundation
 import RxSwift
 
-class HomeViewModel {
+final class HomeViewModel {
     private let homeDataUseCase = AblyHomeDataUseCase()
     private let disposeBag: DisposeBag = .init()
     private var homeData = AblyHomeData(banners: [], goods: [])

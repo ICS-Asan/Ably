@@ -1,7 +1,7 @@
 import Foundation
 import RxSwift
 
-class AblyHomeDataUseCase {
+final class AblyHomeDataUseCase {
     let ablyHomeDataRepository: NetworkRepository
     let realmRepository: RealmRepository
     

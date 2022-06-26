@@ -2,7 +2,7 @@ import UIKit
 import SnapKit
 import SDWebImage
 
-class GoodsCell: UICollectionViewCell {
+final class GoodsCell: UICollectionViewCell {
     var changeFavoriteState: (() -> Void)?
     private var isFavorite: Bool {
         return favoriteButton.tintColor == Design.Color.main

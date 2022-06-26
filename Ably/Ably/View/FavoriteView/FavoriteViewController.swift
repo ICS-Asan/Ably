@@ -1,7 +1,7 @@
 import UIKit
 import RxSwift
 
-class FavoriteViewController: UIViewController {
+final class FavoriteViewController: UIViewController {
     
     private enum Section {
         case favorite
